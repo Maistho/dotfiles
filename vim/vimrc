@@ -1,0 +1,70 @@
+" Auto stuff
+" Remove trailing whitespaces on all lines
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Remember the position of the cursor
+function! ResCur()
+	if line("'\"") <= line("$")
+		normal! g`"
+		return 1
+	endif
+endfunction
+
+augroup resCur
+	autocmd!
+	autocmd BufWinEnter * call ResCur()
+augroup END
+
+"-
+
+" Vundle setup
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+" Bundles
+Bundle "pangloss/vim-javascript"
+Bundle "mustache/vim-mustache-handlebars"
+
+filetype plugin indent on
+
+" mustache-vim-handlebars
+let g:mustache_abbreviations = 1
+
+" Basic stuff
+set nocompatible
+set backspace=2
+syntax on
+colorscheme distinguished
+set showcmd
+set nohidden
+
+" Use line numbers
+set number
+
+" Set proper tabs and indents
+set noexpandtab
+set tabstop=3
+set shiftwidth=3
+set autoindent
+
+" Set completion
+set wildmenu
+
+" Allow use of mouse
+set mouse=a
+
+" Search with smart case sensitivity
+set ignorecase
+set smartcase
+
+set incsearch
+set hlsearch
+set grepprg=grep\ -H\ $*
+
+" Remaps
+nnoremap <F5> gg=G''
+inoremap jj <Esc>
+nnoremap <F7> :tabp<CR>
+nnoremap <F8> :tabn<CR>
