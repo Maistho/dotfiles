@@ -23,22 +23,27 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-" Bundles
-Bundle "pangloss/vim-javascript"
-Bundle "mustache/vim-mustache-handlebars"
-
 filetype plugin indent on
 
-" mustache-vim-handlebars
+" Bundles
+Bundle "pangloss/vim-javascript"
+
+Bundle "mustache/vim-mustache-handlebars"
 let g:mustache_abbreviations = 1
+
+Bundle "Valloric/MatchTagAlways"
+let g:mta_set_default_matchtag_color = 1
+highlight MatchParen ctermfg=black ctermbg=lightgrey guibg=lightgreen
+
 
 " Basic stuff
 set nocompatible
 set backspace=2
 syntax on
-colorscheme distinguished
+" colorscheme vim-distinguished/colors/distinguished
 set showcmd
 set nohidden
+set lbr
 
 " Use line numbers
 set number
@@ -63,8 +68,18 @@ set incsearch
 set hlsearch
 set grepprg=grep\ -H\ $*
 
+" Persistent undo
+" not working? TODO: check why
+set undodir=~/.vim/undodir
+set undofile
+set undolevels=1000
+set undoreload=10000
+
 " Remaps
 nnoremap <F5> gg=G''
+inoremap <F5> <Esc>gg=G''
 inoremap jj <Esc>
-nnoremap <F7> :tabp<CR>
+inoremap <F7> <Esc>:tabp<CR>
+inoremap <F8> <Esc>:tabn<CR>
 nnoremap <F8> :tabn<CR>
+nnoremap <F7> :tabp<CR>

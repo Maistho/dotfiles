@@ -4,3 +4,9 @@
 [submodule "vim/colors/vim-distinguished"]
 	path = vim/colors/vim-distinguished
 	url = https://github.com/Lokaltog/vim-distinguished
+[submodule "bin/gibo"]
+	path = bin/gibo
+	url = https://github.com/simonwhitaker/gibo
+[submodule "vim/vim"]
+	path = vim/vim
+	url = https://github.com/b4winckler/vim
