@@ -40,7 +40,7 @@ highlight MatchParen ctermfg=black ctermbg=lightgrey guibg=lightgreen
 set nocompatible
 set backspace=2
 syntax on
-" colorscheme vim-distinguished/colors/distinguished
+colorscheme vim-distinguished/colors/distinguished
 set showcmd
 set nohidden
 set lbr
