@@ -29,6 +29,18 @@ else
 	echo $name is already linked
 fi
 
+#mopidy
+# mopdy should link to ~/.config/mopidy/mopidy.conf
+name=mopidy.conf
+src=$from/config/$name
+link=$to/.config/mopidy/$name
+if [[ ! -h $link ]]; then
+	ln -s $src $link
+	echo linked $name
+else
+	echo $name is already linked
+fi
+
 #miscfiles
 # miscfiles should link to ~/.file
 src=$from/misc/*
