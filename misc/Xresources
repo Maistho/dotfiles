@@ -1,0 +1,35 @@
+! Appearance
+! Font
+urxvt.font:	xft:Inconsolata:size=10
+! Scrollbar disabled
+urxvt.scrollBar: false
+! Character Spacing
+!urxvt.letterSpace: -1
+! Colors
+*background: #181818
+*foreground: #c0c0c0
+*cursorColor: #93a1a1
+
+*color0:		#121212
+*color8:		#2e3436
+
+*color1:		#a35b66
+*color9:		#ab6b74
+
+*color2:		#99ab6f
+*color10:	#acb972
+
+*color3:		#ca9733
+*color11:	#ccaa69
+
+*color4:		#495d6e
+*color12:	#687987
+
+*color5:		#825969
+*color13:	#977381
+
+*color6:		#839191
+*color14:	#98a4a4
+
+*color7:		#e0e0e0
+*color15:	#e5e5e5

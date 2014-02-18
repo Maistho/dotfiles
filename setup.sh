@@ -28,3 +28,18 @@ if [[ ! -h $link ]]; then
 else
 	echo $name is already linked
 fi
+
+#miscfiles
+# miscfiles should link to ~/.file
+src=$from/misc/*
+for f in $src
+do
+	name=$(basename $f)
+	link=$to/.$name
+	if [[ ! -h $link ]]; then
+		ln -s $src $link
+		echo linked $name
+	else
+		echo $name is already linked
+	fi
+done
