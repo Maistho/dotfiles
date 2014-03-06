@@ -1,0 +1,6 @@
+#!/bin/bash
+
+trashdir=/home/maistho/.trash
+
+mv $@ $trashdir
+
