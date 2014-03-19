@@ -49,7 +49,7 @@ do
 	name=$(basename $f)
 	link=$to/.$name
 	if [[ ! -h $link ]]; then
-		ln -s $src $link
+		ln -s $f $link
 		echo linked $name
 	else
 		echo $name is already linked

@@ -35,6 +35,8 @@ Bundle "Valloric/MatchTagAlways"
 let g:mta_set_default_matchtag_color = 1
 highlight MatchParen ctermfg=black ctermbg=lightgrey guibg=lightgreen
 
+Bundle "embear/vim-localvimrc"
+
 
 " Basic stuff
 set nocompatible
@@ -83,3 +85,6 @@ inoremap <F7> <Esc>:tabp<CR>
 inoremap <F8> <Esc>:tabn<CR>
 nnoremap <F8> :tabn<CR>
 nnoremap <F7> :tabp<CR>
+
+" Set mustache filetype for handlebars
+autocmd BufNewFile,BufRead *.handlebars   set ft=mustache
