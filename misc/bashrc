@@ -6,10 +6,10 @@
 [[ $- != *i* ]] && return
 
 PS1='[\u@\h \W]\$ '
-if [[ -h ~/bin ]] then;
+if [[ -h ~/bin ]]; then
     PATH=$PATH:~/bin
 fi
-if [[ -d /opt/android-sdk ]] then;
+if [[ -d /opt/android-sdk ]]; then
     PATH=$PATH:/opt/android-sdk/platform-tools:/opt/android-sdk/tools
 fi
 
