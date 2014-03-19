@@ -1,3 +1,20 @@
-alias ls="ls --color"
-PATH=$PATH:~/bin
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+PS1='[\u@\h \W]\$ '
+if [[ -h ~/bin ]] then;
+    PATH=$PATH:~/bin
+fi
+if [[ -d /opt/android-sdk ]] then;
+    PATH=$PATH:/opt/android-sdk/platform-tools:/opt/android-sdk/tools
+fi
+
+alias ls='ls --color=auto'
 alias vim="vim -p"
+
+alias chromiumdev="chromium --user-data-dir=/home/maistho/chromedev --disable-web-security"
+
