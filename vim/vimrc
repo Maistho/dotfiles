@@ -35,6 +35,13 @@ Bundle "Valloric/MatchTagAlways"
 let g:mta_set_default_matchtag_color = 1
 highlight MatchParen ctermfg=black ctermbg=lightgrey guibg=lightgreen
 
+" Bundle 'jelera/vim-javascript-syntax'
+"au FileType javascript call JavaScriptFold()
+
+Bundle "godlygeek/tabular"
+
+" Set filetype mustache for handlebars
+autocmd BufNewFile,Bufread *.handlebars setfiletype mustache
 
 " Basic stuff
 set nocompatible
@@ -49,9 +56,9 @@ set lbr
 set number
 
 " Set proper tabs and indents
-set noexpandtab
-set tabstop=3
-set shiftwidth=3
+set expandtab
+set tabstop=4
+set shiftwidth=4
 set autoindent
 
 " Set completion

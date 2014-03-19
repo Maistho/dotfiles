@@ -7,3 +7,7 @@
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
+
+alias chromiumdev="chromium --user-data-dir=/home/maistho/chromedev --disable-web-security"
+
+export PATH=$PATH:/opt/android-sdk/platform-tools:/opt/android-sdk/tools
