@@ -13,6 +13,10 @@ if [[ -d /opt/android-sdk ]]; then
     PATH=$PATH:/opt/android-sdk/platform-tools:/opt/android-sdk/tools
 fi
 
+unzip () {
+	command unzip "$@" -x "*__MACOSX*" "*.DS_Store*"
+}
+
 alias ls='ls --color=auto'
 alias vim="vim -p"
 
