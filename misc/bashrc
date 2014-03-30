@@ -6,8 +6,9 @@
 [[ $- != *i* ]] && return
 
 #PS1='[\u@\h \W]\$ '
+
+# Git branch in bashprompt
 source "/usr/share/git/completion/git-prompt.sh"
-PS1="[\u@\h \W] \$(__git_ps1)$"
 export PS1="\e[0;35m\$(__git_ps1 '(%s) ')\e[m[\u@\h \e[0;32m\W\e[m]$ \[$(tput sgr0)\]"
 
 if [[ -h ~/bin ]]; then
