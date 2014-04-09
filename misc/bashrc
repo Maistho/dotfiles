@@ -11,6 +11,8 @@
 source "/usr/share/git/completion/git-prompt.sh"
 export PS1="\e[0;35m\$(__git_ps1 '(%s) ')\e[m[\u@\h \e[0;32m\W\e[m]$ \[$(tput sgr0)\]"
 
+export EDITOR="vim"
+
 if [[ -h ~/bin ]]; then
     PATH=$PATH:~/bin
 fi
