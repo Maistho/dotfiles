@@ -19,6 +19,9 @@ fi
 if [[ -d /opt/android-sdk ]]; then
     PATH=$PATH:/opt/android-sdk/platform-tools:/opt/android-sdk/tools
 fi
+if [[ -d ~/prog/pintos/bin ]]; then
+    PATH=$PATH:~/prog/pintos/bin
+fi
 
 unzip () {
 	command unzip "$@" -x "*__MACOSX*" "*.DS_Store*"
