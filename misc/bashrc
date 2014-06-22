@@ -23,9 +23,8 @@ if [[ -d ~/prog/pintos/bin ]]; then
     PATH=$PATH:~/prog/pintos/bin
 fi
 
-if [[ -d ~/.gem ]]; then
-    PATH=$PATH:~/.gem/ruby/2.1.0/bin
-fi
+PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
+
 unzip () {
 	command unzip "$@" -x "*__MACOSX*" "*.DS_Store*"
 }
