@@ -40,3 +40,6 @@ alias git-blame-count="git ls-tree --name-only -z -r HEAD|egrep -z -Z -E '\.(cc|
 #Temp android-studio fix
 alias android-studio="_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on' android-studio"
 
+# etckeeper
+alias pkg-update='sudo etckeeper pre-install && sudo pacman -Syu && sudo etckeeper post-install'
+
