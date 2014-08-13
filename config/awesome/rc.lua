@@ -36,6 +36,9 @@ do
 end
 -- }}}
 
+-- Start xcompmgr
+awful.util.spawn_with_shell("xcompmgr &")
+
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/usr/share/awesome/themes/default/theme.lua")
@@ -73,7 +76,13 @@ local layouts =
 -- {{{ Wallpaper
 if beautiful.wallpaper then
     for s = 1, screen.count() do
-        gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+        if s == 2 then
+            gears.wallpaper.maximized("/home/maistho/wallpaper/1/0.jpg", s, true)
+        elseif s == 3 then
+            gears.wallpaper.maximized("/home/maistho/wallpaper/1/1.jpg", s, true)
+        else
+            gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+        end
     end
 end
 -- }}}

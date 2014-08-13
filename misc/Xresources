@@ -5,8 +5,12 @@ urxvt.font:	xft:Inconsolata:size=10
 urxvt.scrollBar: false
 ! Character Spacing
 !urxvt.letterSpace: -1
+
+!Transparency
+urxvt.depth: 32
+urxvt.background: [70]#000000
+
 ! Colors
-*background: #181818
 *foreground: #c0c0c0
 *cursorColor: #93a1a1
 
