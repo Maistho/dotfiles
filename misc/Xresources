@@ -8,7 +8,7 @@ urxvt.scrollBar: false
 
 !Transparency
 urxvt.depth: 32
-urxvt.background: [70]#000000
+urxvt.background: [85]#000000
 
 ! Colors
 *foreground: #c0c0c0

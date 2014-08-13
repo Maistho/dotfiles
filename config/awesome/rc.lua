@@ -75,11 +75,18 @@ local layouts =
 
 -- {{{ Wallpaper
 if beautiful.wallpaper then
+	-- Choose a random wallpaperset from ~/wallpaper
+	-- TODO: do not use /home/maistho, use ~ instead
+	papers = awful.util.pread("ls /home/maistho/wallpaper")
+	paperarray={}
+	for i in string.gmatch(papers, "%S+") do
+	    table.insert(paperarray, i)
+	end
+	paperset = paperarray[ math.random( #paperarray) ]
+	paperdir = "/home/maistho/wallpaper/"..paperset.."/"
     for s = 1, screen.count() do
-        if s == 2 then
-            gears.wallpaper.maximized("/home/maistho/wallpaper/1/0.jpg", s, true)
-        elseif s == 3 then
-            gears.wallpaper.maximized("/home/maistho/wallpaper/1/1.jpg", s, true)
+        if awful.util.file_readable(paperdir..s..".jpg") then
+            gears.wallpaper.maximized(paperdir..s..".jpg", s, true)
         else
             gears.wallpaper.maximized(beautiful.wallpaper, s, true)
         end
