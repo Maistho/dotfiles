@@ -3,7 +3,7 @@
 	url = https://github.com/gmarik/vundle
 [submodule "vim/colors/vim-distinguished"]
 	path = vim/colors/vim-distinguished
-	url = https://github.com/Lokaltog/vim-distinguished
+	url = https://github.com/maistho/vim-distinguished
 [submodule "bin/gibo"]
 	path = bin/gibo
 	url = https://github.com/simonwhitaker/gibo
