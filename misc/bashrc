@@ -9,7 +9,18 @@
 
 # Git branch in bashprompt
 source "/usr/share/git/completion/git-prompt.sh"
-export PS1="\[\e[0;35m\]\$(__git_ps1 '(%s) ')\[\e[m[\]\u@\h \[\e[0;32m\]\W\[\e[m]\]$ \[$(tput sgr0)\]"
+
+# Sets PS1 in a function so its easier to understand. =P
+set_ps1 () {
+local RESET="\[$(tput sgr0)\]"
+local MAGENTA="\[$(tput setaf 5)\]"
+local BOLD="\[$(tput bold)\]"
+local GREEN="\[$(tput setaf 2)\]"
+local RED="\[$(tput setaf 1)\]"
+local GIT="\[\$(__git_ps1 '(%s) ')\]"
+export PS1="[${MAGENTA}\u${RESET}@${MAGENTA}\h ${RESET}${BOLD}${GREEN}\w${RESET}]${RED}${GIT}${RESET}\\$ "
+}
+set_ps1
 
 export EDITOR="vim"
 
@@ -33,7 +44,6 @@ alias ls='ls --color=auto'
 alias vim="vim -p"
 
 alias chromiumdev="chromium --user-data-dir=/home/maistho/chromedev --disable-web-security"
-
 alias git-blame-count="git ls-tree --name-only -z -r HEAD|egrep -z -Z -E '\.(cc|h|cpp|hpp|c|txt|html|js|css|xml)$'|xargs -0 -n1 git blame --line-porcelain|grep '^author '|sort|uniq -c|sort -nr"
 
 
@@ -42,4 +52,3 @@ alias android-studio="_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on' android-s
 
 # etckeeper
 alias pkg-update='sudo etckeeper pre-install && sudo pacman -Syu && sudo etckeeper post-install'
-
