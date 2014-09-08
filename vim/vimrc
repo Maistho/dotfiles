@@ -88,11 +88,18 @@ set undoreload=10000
 " Remaps
 nnoremap <F5> gg=G''
 inoremap <F5> <Esc>gg=G''
-inoremap jj <Esc>
 inoremap <F7> <Esc>:tabp<CR>
 inoremap <F8> <Esc>:tabn<CR>
 nnoremap <F8> :tabn<CR>
 nnoremap <F7> :tabp<CR>
+
+" linewrap up/down navigation
+nnoremap k gk
+nnoremap j gj
+nnoremap <Down> g<Down>
+nnoremap <Up> g<Up>
+inoremap <Down> <C-o>g<Down>
+inoremap <Up> <C-o>g<Up>
 
 " Set mustache filetype for handlebars
 autocmd BufNewFile,BufRead *.handlebars   set ft=mustache
