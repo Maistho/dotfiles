@@ -18,7 +18,7 @@ local BOLD="\[$(tput bold)\]"
 local GREEN="\[$(tput setaf 2)\]"
 local LIGHTGREEN="\[$(tput setaf 10)\]"
 local RED="\[$(tput setaf 1)\]"
-local GIT="\[\$(__git_ps1 '(%s) ')\]"
+local GIT="\$(__git_ps1 '(%s) ')"
 #Don't want smiley right now
 #local SMILEY="if [ \$? != 0 ]; then echo \"${RED}:(${RESET}\"; else echo \"${LIGHTGREEN}:)${RESET}\"; fi"
 export PS1="\`${SMILEY}\`[${MAGENTA}\u${RESET}@${MAGENTA}\h ${RESET}${BOLD}${GREEN}\w${RESET}]${RED}${GIT}${RESET}\\$ "
