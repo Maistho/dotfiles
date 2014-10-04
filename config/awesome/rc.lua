@@ -87,6 +87,8 @@ if beautiful.wallpaper then
 	for s = 1, screen.count() do
 		if awful.util.file_readable(paperdir..s..".jpg") then
 			gears.wallpaper.maximized(paperdir..s..".jpg", s, true)
+		elseif awful.util.file_readable(paperdir..s..".png") then
+			gears.wallpaper.maximized(paperdir..s..".png", s, true)
 		else
 			gears.wallpaper.maximized(beautiful.wallpaper, s, true)
 		end
@@ -367,12 +369,17 @@ root.keys(globalkeys)
 -- {{{ Rules
 awful.rules.rules = {
 	-- All clients will match this rule.
-	{ rule = { },
-	properties = { border_width = beautiful.border_width,
-	border_color = beautiful.border_normal,
-	focus = awful.client.focus.filter,
-	keys = clientkeys,
-	buttons = clientbuttons } },
+	{
+		rule = { },
+		properties = {
+			border_width = beautiful.border_width,
+			border_color = beautiful.border_normal,
+			focus = awful.client.focus.filter,
+			keys = clientkeys,
+			buttons = clientbuttons,
+			size_hints_honor = false
+		}
+	},
 	{ rule = { class = "MPlayer" },
 	properties = { floating = true } },
 	{ rule = { class = "pinentry" },
@@ -454,8 +461,8 @@ client.connect_signal("manage", function (c, startup)
 	end
 end)
 
-client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
-client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+-- client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
+-- client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-os.execute("nm-applet &")
+os.execute("pgrep -u $USER -x nm-applet > /dev/null || (nm-applet --sm-disable &)")
