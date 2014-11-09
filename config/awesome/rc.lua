@@ -11,6 +11,18 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 
+local vicious = require("vicious")
+    batwidget = awful.widget.progressbar()
+    batwidget:set_width(8)
+    batwidget:set_height(10)
+    batwidget:set_vertical(true)
+    batwidget:set_background_color("#494B4F")
+    batwidget:set_border_color(nil)
+    batwidget:set_color("#AECF96")
+    --batwidget:set_gradient_colors({ "#AECF96", "#88A175", "#FF5656" })
+    vicious.register(batwidget, vicious.widgets.bat, "$2", 61, "BAT0")
+
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -443,6 +455,7 @@ client.connect_signal("manage", function (c, startup)
 		right_layout:add(awful.titlebar.widget.stickybutton(c))
 		right_layout:add(awful.titlebar.widget.ontopbutton(c))
 		right_layout:add(awful.titlebar.widget.closebutton(c))
+		right_layout:add(batwidget)
 
 		-- The title goes in the middle
 		local middle_layout = wibox.layout.flex.horizontal()
@@ -466,3 +479,5 @@ end)
 -- }}}
 
 os.execute("pgrep -u $USER -x nm-applet > /dev/null || (nm-applet --sm-disable &)")
+os.execute("pgrep -u $USER -x touchegg > /dev/null || (touchegg &)")
+
