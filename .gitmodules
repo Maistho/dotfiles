@@ -10,3 +10,6 @@
 [submodule "vim/vim"]
 	path = vim/vim
 	url = https://github.com/b4winckler/vim
+[submodule "config/awesome/assault"]
+	path = config/awesome/assault
+	url = https://github.com/NuckChorris/assault.git

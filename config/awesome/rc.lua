@@ -11,16 +11,9 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 
+local assault = require("assault")
 local vicious = require("vicious")
-    batwidget = awful.widget.progressbar()
-    batwidget:set_width(8)
-    batwidget:set_height(10)
-    batwidget:set_vertical(true)
-    batwidget:set_background_color("#494B4F")
-    batwidget:set_border_color(nil)
-    batwidget:set_color("#AECF96")
-    --batwidget:set_gradient_colors({ "#AECF96", "#88A175", "#FF5656" })
-    vicious.register(batwidget, vicious.widgets.bat, "$2", 61, "BAT0")
+
 
 
 -- {{{ Error handling
@@ -218,9 +211,19 @@ for s = 1, screen.count() do
 	left_layout:add(mytaglist[s])
 	left_layout:add(mypromptbox[s])
 
+
+	-- Battery widget
+	myassault = assault({
+		adapter = "AC0",
+		critical_level = 0.15,
+		critical_color = "#ff0000",
+		charging_color = "#00ff00"
+	})
+
 	-- Widgets that are aligned to the right
 	local right_layout = wibox.layout.fixed.horizontal()
 	if s == 1 then right_layout:add(wibox.widget.systray()) end
+	right_layout:add(myassault)
 	right_layout:add(mytextclock)
 	right_layout:add(mylayoutbox[s])
 
@@ -455,7 +458,6 @@ client.connect_signal("manage", function (c, startup)
 		right_layout:add(awful.titlebar.widget.stickybutton(c))
 		right_layout:add(awful.titlebar.widget.ontopbutton(c))
 		right_layout:add(awful.titlebar.widget.closebutton(c))
-		right_layout:add(batwidget)
 
 		-- The title goes in the middle
 		local middle_layout = wibox.layout.flex.horizontal()
