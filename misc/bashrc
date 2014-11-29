@@ -55,3 +55,9 @@ alias android-studio="_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on' android-s
 
 # etckeeper
 alias pkg-update='sudo etckeeper pre-install && sudo pacman -Syu && sudo etckeeper post-install'
+
+
+# Save bash history after each command
+shopt -s histappend                      # append to history, don't overwrite it
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
