@@ -13,3 +13,6 @@
 [submodule "config/awesome/assault"]
 	path = config/awesome/assault
 	url = https://github.com/NuckChorris/assault.git
+[submodule "config/awesome/apw"]
+	path = config/awesome/apw
+	url = https://github.com/mokasin/apw
