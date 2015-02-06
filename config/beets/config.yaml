@@ -1,0 +1,23 @@
+directory:  /media/music/
+library:    /media/disks/mybook/music/musiclibrary.blb
+
+import:
+   write:   yes
+   copy:    yes
+   resume:  ask
+   languages: [en]
+
+match:
+   preferred:
+      countries:  ['GB|UK', 'US', 'SE']
+      media:      ['CD', 'Digital Media|File']
+      original_year: yes
+
+paths:
+   default:    $albumartist/$album%aunique{albumartist album, albumtype year label catalognum albumdisambig}/$track $title
+   singleton:  Non-Album/$artist/$title
+   comp:       Compilations/$album%aunique{albumartist album, albumtype year label catalognum albumdisambig}/$track $title
+
+   albumtype:soundtrack:   Soundtracks/$album%aunique{albumartist album, albumtype year label catalognum albumdisambig}/$track $title
+
+plugins: web

@@ -44,6 +44,19 @@ else
 	ln -s $src $link && echo linked $name
 fi
 
+#beets
+# beets should link to ~/.config/beets
+name=beets
+src=$from/config/$name
+link=$to/.config/$name
+if [[ -h $link ]]; then
+	echo $name is already linked
+elif [[ -e $link ]]; then
+	echo $name exists. You need to remove/rename it before linking.
+else
+	ln -s $src $link && echo linked $name
+fi
+
 #miscfiles
 # miscfiles should link to ~/.file
 src=$from/misc/*
