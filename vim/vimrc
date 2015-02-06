@@ -1,3 +1,5 @@
+map <Esc>[27;5;9~ <C-Tab>
+map <Esc>[27;6;9~ <C-S-tab>
 " Auto stuff
 " Remove trailing whitespaces on all lines
 autocmd BufWritePre * :%s/\s\+$//e
@@ -92,6 +94,12 @@ inoremap <F7> <Esc>:tabp<CR>
 inoremap <F8> <Esc>:tabn<CR>
 nnoremap <F8> :tabn<CR>
 nnoremap <F7> :tabp<CR>
+
+" Tab navigation
+nnoremap <C-S-tab> :tabp<CR>
+nnoremap <C-tab>   :tabn<CR>
+inoremap <C-S-tab> <Esc>:tabp<CR>
+inoremap <C-tab>   <Esc>:tabn<CR>
 
 " linewrap up/down navigation
 nnoremap k gk
