@@ -109,7 +109,7 @@ if beautiful.wallpaper then
 	tags = {}
 	for s = 1, screen.count() do
 		-- Each screen has its own tag table.
-		tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[2])
+		tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, "♬" }, s, layouts[2])
 	end
 	-- }}}
 
@@ -206,7 +206,7 @@ if beautiful.wallpaper then
 		mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
 		-- Create the wibox
-		mywibox[s] = awful.wibox({ position = "top", screen = s })
+		mywibox[s] = awful.wibox({ position = "top", height = "18", screen = s })
 
 		-- Widgets that are aligned to the left
 		local left_layout = wibox.layout.fixed.horizontal()
