@@ -61,3 +61,5 @@ alias pkg-update='sudo etckeeper pre-install && sudo pacman -Syu && sudo etckeep
 shopt -s histappend                      # append to history, don't overwrite it
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
+
+alias britebacktunnel="ssh -R 10.37.0.5:8086:localhost:8086 bylundia.se"

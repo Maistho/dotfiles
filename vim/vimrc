@@ -49,6 +49,8 @@ Bundle "godlygeek/tabular"
 
 Bundle "tpope/vim-fugitive"
 
+Bundle "ap/vim-css-color"
+
 
 " Syntaxchecking with jshint
 
