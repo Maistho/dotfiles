@@ -1,0 +1,11 @@
+[user]
+	name = Gustav Bylund
+	email = maistho@gmail.com
+[credential]
+	helper = /usr/share/git/credential/gnome-keyring/git-credential-gnome-keyring
+[push]
+	default = simple
+[alias]
+	unadd = reset HEAD
+[core]
+	excludesfile = /home/maistho/dotfiles/gitignore_global
