@@ -63,3 +63,4 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 
 alias britebacktunnel="ssh -R 10.37.0.5:8086:localhost:8086 bylundia.se"
+alias playmusic='chromium --profile-directory=Default --app-id=icppfcnhkcmnfdhfhphakoifcfokfdhg'
