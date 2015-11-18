@@ -1,0 +1,4 @@
+'.platform-win32 atom-workspace, .platform-linux atom-workspace':
+  'ctrl-o': 'advanced-open-file:toggle'
+'atom-text-editor.vim-mode.normal-mode':
+  'ctrl-t': 'fuzzy-finder:toggle-file-finder'

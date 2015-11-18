@@ -18,6 +18,19 @@ else
 	ln -s $src $link && echo linked $name
 fi
 
+#atom
+# atom should link to ~/.atom
+name=atom
+src=$from/$name
+link=$to/.$name
+if [[ -h $link ]]; then
+	echo $name is already linked
+elif [[ -e $link ]]; then
+	echo $name exists. You need to remove/rename it before linking.
+else
+	ln -s $src $link && echo linked $name
+fi
+
 #awesome
 # awesome should link to ~/.config/awesome
 name=awesome
