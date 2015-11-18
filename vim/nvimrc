@@ -39,8 +39,8 @@ Bundle "Valloric/MatchTagAlways"
 let g:mta_set_default_matchtag_color = 1
 highlight MatchParen ctermfg=black ctermbg=lightgrey guibg=lightgreen
 
-Bundle "embear/vim-localvimrc"
-let g:localvimrc_ask = 0
+"Bundle "embear/vim-localvimrc"
+"let g:localvimrc_ask = 0
 
 " Bundle 'jelera/vim-javascript-syntax'
 "au FileType javascript call JavaScriptFold()
@@ -51,6 +51,9 @@ Bundle "tpope/vim-fugitive"
 
 Bundle "ap/vim-css-color"
 
+Bundle "digitaltoad/vim-jade"
+
+Bundle "editorconfig/editorconfig-vim"
 
 " Syntaxchecking with jshint
 
@@ -64,8 +67,12 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['jshint', 'jscs']
 
+" New statusline
+"Bundle "bling/vim-airline"
+
+"let g:airline#extensions#tabline#enabled = 1
 
 
 " Basic stuff
@@ -80,10 +87,10 @@ set lbr
 " Use line numbers
 set number
 
-" Set proper tabs and indents
-set noexpandtab
-set tabstop=3
-set shiftwidth=3
+" Set proper tabs and indents 4spaces
+set expandtab
+set tabstop=4
+set shiftwidth=4
 set autoindent
 
 " Set completion
@@ -115,7 +122,7 @@ inoremap <F8> <Esc>:tabn<CR>
 nnoremap <F8> :tabn<CR>
 nnoremap <F7> :tabp<CR>
 
-" Tab navigation
+" Buffer navigation
 nnoremap <C-S-tab> :tabp<CR>
 nnoremap <C-tab>   :tabn<CR>
 inoremap <C-S-tab> <Esc>:tabp<CR>
@@ -141,3 +148,7 @@ let &colorcolumn="80,".join(range(120,999),",")
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 
+
+"Html files
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType php setlocal shiftwidth=2 tabstop=2
