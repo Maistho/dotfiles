@@ -1,6 +1,10 @@
 #!/bin/bash
+
+#quit if something fails
+set -e
+
 #should symlink all the things
-from="`dirname \`which $0\``"
+from="`dirname \`command -v $0\``"
 to=$HOME
 
 echo installing from $from to $to
