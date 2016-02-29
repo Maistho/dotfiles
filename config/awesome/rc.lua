@@ -14,6 +14,8 @@ local menubar = require("menubar")
 local assault = require("assault/awesomewm/assault")
 local vicious = require("vicious")
 
+local cpuinfo = require("cpuinfo")
+
 
 
 -- Load the pulseaudio widget.
@@ -44,8 +46,6 @@ do
 end
 -- }}}
 
--- Start xcompmgr
-awful.util.spawn_with_shell("xcompmgr &")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
@@ -226,6 +226,7 @@ if beautiful.wallpaper then
 
 		-- Widgets that are aligned to the right
 		local right_layout = wibox.layout.fixed.horizontal()
+        right_layout:add(cpuinfo)
 		if s == 1 then right_layout:add(wibox.widget.systray()) end
 		right_layout:add(myassault)
 		right_layout:add(mytextclock)
@@ -497,3 +498,5 @@ if beautiful.wallpaper then
 	os.execute("pgrep -u $USER -x nm-applet > /dev/null || (nm-applet --sm-disable &)")
 	os.execute("pgrep -u $USER -x touchegg > /dev/null || (touchegg &)")
 
+-- Start compositing
+awful.util.spawn_with_shell("compton --config ~/.config/compton.conf -b")

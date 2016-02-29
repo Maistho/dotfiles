@@ -1,50 +1,61 @@
 "*":
-  "exception-reporting":
-    userId: "4ef36ce1-6466-25c8-078f-63d7b2760e2b"
-  welcome:
-    showOnStartup: false
+  "advanced-open-file": {}
+  "atom-material-ui":
+    accentColor: "Purple"
+    compactTreeView: true
+    depth: true
+    disableAnimations: true
+    panelContrast: true
+    showTabIcons: "Show on all tabs"
+  "atom-terminal":
+    app: "urxvt"
+  "atom-typescript": {}
+  "autoclose-html": {}
+  "autocomplete-plus": {}
   core:
+    disabledPackages: [
+      "vim-mode"
+    ]
     themes: [
       "atom-material-ui"
       "atom-material-syntax"
     ]
   editor:
+    fontSize: 15
     invisibles: {}
     showIndentGuide: true
-    softTabs: false
     showInvisibles: true
+    softTabs: false
     softWrap: true
-    fontSize: 15
-  linter:
-    showErrorTabLine: true
-  "vim-mode":
-    useSmartcaseForSearch: true
-    useClipboardAsDefaultRegister: true
-  "atom-material-ui":
-    compactTreeView: true
-    depth: true
-    panelContrast: true
-    disableAnimations: true
-    showTabIcons: "Show on all tabs"
-    accentColor: "Purple"
-  "linter-scss-lint":
-    executablePath: "/home/maistho/.gem/ruby/2.2.0/bin/scss-lint"
-  "advanced-open-file": {}
-  "sync-settings":
-    _analyticsUserId: "ab7507b7-7cf2-4cd1-bc77-425265300b9e"
-    personalAccessToken: "1909251e8ec694870b68f6b2ee8f53537180ab72"
-    gistId: "21e8b011ea092bee1018"
-    _lastBackupHash: "0648d582bb9dafeb603a897c41cb6ef274ba95f8"
-  "linter-sass-lint": {}
-  "atom-terminal":
-    app: "urxvt"
-  "linter-jscs": {}
+  "exception-reporting":
+    userId: "4ef36ce1-6466-25c8-078f-63d7b2760e2b"
   "keyboard-localization":
     useKeyboardLayout: "sv_SE"
-  "autocomplete-plus": {}
-  "merge-conflicts": {}
+  linter:
+    showErrorTabLine: true
   "linter-eslint":
     useGlobalEslint: true
+  "linter-jscs": {}
+  "linter-sass-lint": {}
+  "linter-scss-lint":
+    executablePath: "/home/maistho/.gem/ruby/2.2.0/bin/scss-lint"
+  "markdown-preview":
+    useGitHubStyle: true
+  "merge-conflicts": {}
+  "sync-settings":
+    _analyticsUserId: "ab7507b7-7cf2-4cd1-bc77-425265300b9e"
+    _lastBackupHash: "0648d582bb9dafeb603a897c41cb6ef274ba95f8"
+    gistId: "21e8b011ea092bee1018"
+    personalAccessToken: "1909251e8ec694870b68f6b2ee8f53537180ab72"
   "tree-view":
     hideVcsIgnoredFiles: true
     squashDirectoryNames: true
+  "vim-mode":
+    useClipboardAsDefaultRegister: true
+    useSmartcaseForSearch: true
+  "vim-mode-plus":
+    highlightSearch: true
+    incrementalSearch: true
+    useSmartcaseForSearch: true
+  welcome:
+    showOnStartup: false
