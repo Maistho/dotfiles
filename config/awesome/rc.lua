@@ -1,6 +1,6 @@
 -- Standard awesome library
 local gears = require("gears")
-local awful = require("awful")
+awful = require("awful")
 awful.rules = require("awful.rules")
 require("awful.autofocus")
 -- Widget and layout library
@@ -500,8 +500,8 @@ if beautiful.wallpaper then
 	-- client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 	-- }}}
 
-	os.execute("pgrep -u $USER -x nm-applet > /dev/null || (nm-applet --sm-disable &)")
-	os.execute("pgrep -u $USER -x touchegg > /dev/null || (touchegg &)")
-
+local r = require("runonce");
 -- Start compositing
-awful.util.spawn_with_shell("compton --config ~/.config/compton.conf -b")
+r.run("compton --config ~/.config/compton.conf -b")
+-- Run autostart stuff
+r.run("dex -a -e Awesome")
