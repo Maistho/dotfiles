@@ -35,44 +35,22 @@ else
 	ln -s $src $link && echo linked $name
 fi
 
-#awesome
-# awesome should link to ~/.config/awesome
-name=awesome
-src=$from/config/$name
-link=$to/.config/$name
-if [[ -h $link ]]; then
-	echo $name is already linked
-elif [[ -e $link ]]; then
-	echo $name exists. You need to remove/rename it before linking.
-else
-	ln -s $src $link && echo linked $name
-fi
 
-#mopidy
-# mopdy should link to ~/.config/mopidy/mopidy.conf
-name=mopidy.conf
-src=$from/config/$name
-link=$to/.config/mopidy/$name
-if [[ -h $link ]]; then
-	echo $name is already linked
-elif [[ -e $link ]]; then
-	echo $name exists. You need to remove/rename it before linking.
-else
-	ln -s $src $link && echo linked $name
-fi
-
-#beets
-# beets should link to ~/.config/beets
-name=beets
-src=$from/config/$name
-link=$to/.config/$name
-if [[ -h $link ]]; then
-	echo $name is already linked
-elif [[ -e $link ]]; then
-	echo $name exists. You need to remove/rename it before linking.
-else
-	ln -s $src $link && echo linked $name
-fi
+#config
+# files in config should link to ~/.config/filename
+src=$from/config/*
+for f in $src
+do
+	name=$(basename $f)
+	link=$to/.config/$name
+	if [[ -h $link ]]; then
+		echo $name is already linked
+	elif [[ -e $link ]]; then
+		echo $name exists. You need to remove/rename it before linking.
+	else
+		ln -s $f $link && echo linked $name
+	fi
+done
 
 #miscfiles
 # miscfiles should link to ~/.file
