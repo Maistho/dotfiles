@@ -2,10 +2,11 @@
 URxvt*iso14755: False
 URxvt*iso14755_52: False
 
+Xft.rgba: rgb
 
 ! Appearance
 ! Font
-urxvt.font:	xft:Inconsolata:size=10
+urxvt.font:	xft:Inconsolata:size=11
 ! Scrollbar disabled
 urxvt.scrollBar: false
 ! Character Spacing

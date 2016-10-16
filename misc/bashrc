@@ -57,9 +57,19 @@ alias android-studio="_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on' android-s
 alias pkg-update='sudo etckeeper pre-install && sudo pacman -Syu && sudo etckeeper post-install'
 
 
+#Avoid duplicates in bash_history
+export HISTCONTROL=ignoredups:erasedups
 # Save bash history after each command
 shopt -s histappend                      # append to history, don't overwrite it
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 
 
 alias playmusic='chromium --profile-directory=Default --app-id=icppfcnhkcmnfdhfhphakoifcfokfdhg'
+
+export NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$NPM_PACKAGES/bin:$PATH"
+
+
+
+export NVM_DIR="/home/maistho/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -4,3 +4,8 @@
   'ctrl-t': 'fuzzy-finder:toggle-file-finder'
 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
   ':': 'ex-mode:open'
+'body':
+  'ctrl-tab ^ctrl': 'unset!'
+  'ctrl-tab': 'pane:show-next-item'
+  'ctrl-shift-tab ^ctrl': 'unset!'
+  'ctrl-shift-tab': 'pane:show-previous-item'

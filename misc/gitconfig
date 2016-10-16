@@ -7,6 +7,9 @@
 	default = simple
 [alias]
 	unadd = reset HEAD
+    branch-diff = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 [core]
 	excludesfile = /home/maistho/dotfiles/gitignore_global
 	attributesfile = /home/maistho/dotfiles/gitattributes
+[pull]
+	rebase = true

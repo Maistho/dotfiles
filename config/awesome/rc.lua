@@ -415,8 +415,13 @@ if beautiful.wallpaper then
 		-- Set Firefox to always map on tags number 2 of screen 1.
 		-- { rule = { class = "Firefox" },
 		--   properties = { tag = tags[1][2] } },
-		{ rule = { instance = "crx_nckgahadagoaajjgafhacjanaoiihapd" },
-		properties = { tag = tags[1][8] } },
+        -- Set hangouts to always map on tag named chat
+		-- { rule = { instance = "crx_nckgahadagoaajjgafhacjanaoiihapd" },
+		-- properties = { tag = tags[1][8] } },
+        -- Set Telegram to be on the "chat" tag
+		 { rule = { class = "Telegram" },
+		 properties = { tag = tags[1][8] } },
+        -- Set google play music to always be on the music tag
 		{ rule = { instance = "crx_icppfcnhkcmnfdhfhphakoifcfokfdhg" },
 		properties = { tag = tags[1][9] } },
 	}
