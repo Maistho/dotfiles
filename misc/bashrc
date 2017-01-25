@@ -25,6 +25,9 @@ export PS1="\`${SMILEY}\`[${MAGENTA}\u${RESET}@${MAGENTA}\h ${RESET}${BOLD}${GRE
 }
 set_ps1
 
+# Makes bash check how large the window is
+shopt -s checkwinsize
+
 export EDITOR="vim"
 
 if [[ -h ~/bin ]]; then
@@ -44,7 +47,7 @@ unzip () {
 }
 
 alias ls='ls --color=auto'
-alias vim="vim -p"
+alias vim="nvim -p"
 
 alias chromiumdev="chromium --user-data-dir=/home/maistho/chromedev --disable-web-security"
 alias git-blame-count="git ls-tree --name-only -z -r HEAD|egrep -z -Z -E '\.(cc|h|cpp|hpp|c|txt|html|js|css|xml)$'|xargs -0 -n1 git blame --line-porcelain|grep '^author '|sort|uniq -c|sort -nr"

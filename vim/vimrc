@@ -1,3 +1,54 @@
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath+=/home/maistho/.config/nvim/dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+call dein#begin('/home/maistho/.config/nvim/dein')
+
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
+
+" Add or remove your plugins here:
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('Shougo/deoplete.nvim')
+call dein#add('mhartington/deoplete-typescript')
+
+call dein#add('HerringtonDarkholme/yats.vim')
+
+
+" You can specify revision/branch/tag.
+call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+" Required:
+call dein#end()
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+"End dein Scripts-------------------------
+
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_ignore_case = 1
+let g:deoplete#auto_complete_start_length = 0
+let g:auto_complete_start_length = 0
+let g:deoplete#enable_refresh_always = 1
+let g:deoplete#enable_profile = 1
+"call deoplete#enable_logging('DEBUG', '/home/maistho/.vim/deoplete.log')
+
+
+
 map <Esc>[27;5;9~ <C-Tab>
 map <Esc>[27;6;9~ <C-S-tab>
 " Auto stuff
@@ -17,66 +68,7 @@ augroup resCur
 	autocmd BufWinEnter * call ResCur()
 augroup END
 
-"-
-
-" Vundle setup
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-
-filetype plugin indent on
-
-" Bundles
-Bundle "pangloss/vim-javascript"
-
-Bundle "mustache/vim-mustache-handlebars"
-let g:mustache_abbreviations = 1
-" Set filetype mustache for handlebars
-autocmd BufNewFile,Bufread *.handlebars setfiletype mustache
-
-Bundle "Valloric/MatchTagAlways"
-let g:mta_set_default_matchtag_color = 1
-highlight MatchParen ctermfg=black ctermbg=lightgrey guibg=lightgreen
-
-"Bundle "embear/vim-localvimrc"
-"let g:localvimrc_ask = 0
-
-" Bundle 'jelera/vim-javascript-syntax'
-"au FileType javascript call JavaScriptFold()
-
-Bundle "godlygeek/tabular"
-
-Bundle "tpope/vim-fugitive"
-
-Bundle "ap/vim-css-color"
-
-Bundle "digitaltoad/vim-jade"
-
-Bundle "editorconfig/editorconfig-vim"
-
-" Syntaxchecking with jshint
-
-Bundle "scrooloose/syntastic"
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['jshint', 'jscs']
-
-" New statusline
-"Bundle "bling/vim-airline"
-
-"let g:airline#extensions#tabline#enabled = 1
-
-
 " Basic stuff
-set nocompatible
 set backspace=2
 syntax on
 colorscheme vim-distinguished/colors/distinguished
