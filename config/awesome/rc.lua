@@ -9,6 +9,11 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+
+local assault = require("assault/awesomewm/assault")
+
+local cpuinfo = require("cpuinfo")
+
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 
 -- {{{ Error handling
@@ -117,6 +122,13 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 
+mybattery = assault({
+    adapter = "AC0",
+    critical_level = 0.15,
+    critical_color = "#ff0000",
+    charging_color = "#00ff00"
+})
+
 -- Create a wibox for each screen and add it
 local taglist_buttons = awful.util.table.join(
                     awful.button({ }, 1, function(t) t:view_only() end),
@@ -180,7 +192,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[2])
+    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "♬" }, s, awful.layout.layouts[2])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -199,7 +211,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, tasklist_buttons)
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+    s.mywibox = awful.wibar({ position = "top", screen = s, height = "18" })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -214,7 +226,9 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
+            cpuinfo,
             wibox.widget.systray(),
+            mybattery,
             mytextclock,
             s.mylayoutbox,
         },
@@ -472,6 +486,11 @@ awful.rules.rules = {
     -- Set Firefox to always map on the tag named "2" on screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { screen = 1, tag = "2" } },
+
+    -- Set Telegram to be on the "chat" tag
+    { rule = { class = "Telegram" },
+        properties = { screen = 1, tag = "8" }
+    },
 }
 -- }}}
 
@@ -543,3 +562,20 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+
+-- Add commands for starting applications
+local r = require("runonce")
+
+-- Start network-manager-applet
+r.run("nm-applet --sm-disable")
+
+-- Start touchegg for better touch gestures
+r.run("touchegg")
+
+-- Start compositing
+r.run("compton --config ${XDG_CONFIG_HOME:-$HOME/.config}/compton.conf -b")
+
+-- Run dex to autostart all desktop entries
+r.run("dex -a -e Awesome")
+
