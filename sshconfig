@@ -1,0 +1,37 @@
+IdentityFile ~/.ssh/id_rsa
+
+Host lansen
+	HostName lansen.lysator.liu.se
+	User maistho
+
+Host archington
+	HostName bylundia.se
+	User maistho
+
+Host core1
+    HostName 10.37.0.205
+    User core
+
+Host remote.ida
+    HostName remote.ida.liu.se
+    User gusby84
+
+Host remote-und.ida
+    HostName remote-und.ida.liu.se
+    User gusby403
+
+Host gitlab.com
+    RSAAuthentication yes
+    IdentityFile ~/.ssh/gitlab_rsa
+    User maistho
+
+Host dokku
+    Hostname 10.37.0.7
+    IdentityFile ~/.ssh/ansible_rsa
+    IdentitiesOnly yes
+
+Host mac
+    Hostname 10.37.0.180
+    IdentitiesOnly yes
+    User gustavbylund
+

@@ -79,3 +79,16 @@ do
 		ln -s $f $link && echo linked $name
 	fi
 done
+
+#ssh
+# ssh config should link to ~/.ssh/config
+src=$from/sshconfig
+name=sshconfig
+link=$to/.ssh/config
+if [[ -h $link ]]; then
+	echo $name is already linked
+elif [[ -e $link ]]; then
+	echo $name exists. You need to remove/rename it before linking.
+else
+	ln -s $src $link && echo linked $name
+fi
