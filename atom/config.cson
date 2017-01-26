@@ -21,6 +21,8 @@
     legacyMode: true
   "autocomplete-plus": {}
   core:
+    autoHideMenuBar: true
+    telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
       "atom-material-syntax"
