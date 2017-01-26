@@ -488,7 +488,7 @@ awful.rules.rules = {
     --   properties = { screen = 1, tag = "2" } },
 
     -- Set Telegram to be on the "chat" tag
-    { rule = { class = "Telegram" },
+    { rule = { class = "telegram-desktop" },
         properties = { screen = 1, tag = "8" }
     },
 }
