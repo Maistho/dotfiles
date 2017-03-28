@@ -74,10 +74,5 @@ alias playmusic='chromium --profile-directory=Default --app-id=icppfcnhkcmnfdhfh
 export NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 
-
-
-export NVM_DIR="/home/maistho/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
 export GOPATH="$HOME/.gocode"
 export GOBIN="$GOPATH/bin"
