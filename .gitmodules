@@ -1,15 +1,21 @@
-[submodule "vim/bundle/vundle"]
-	path = vim/bundle/vundle
-	url = https://github.com/gmarik/vundle
+[submodule "vim/dein/repos/github.com/Shougo/vimshell"]
+    path = vim/dein/repos/github.com/Shougo/vimshell
+    url = https://github.com/Shougo/vimshell
+[submodule "vim/dein/repos/github.com/Shougo/neosnippet-snippets"]
+    path = vim/dein/repos/github.com/Shougo/neosnippet-snippets
+    url = https://github.com/Shougo/neosnippet-snippets
+[submodule "vim/dein/repos/github.com/Shougo/deoplete.nvim"]
+    path = vim/dein/repos/github.com/Shougo/deoplete.nvim
+    url = https://github.com/Shougo/deoplete.nvim
+[submodule "vim/dein/repos/github.com/Shougo/dein.vim"]
+    path = vim/dein/repos/github.com/Shougo/dein.vim
+    url = https://github.com/Shougo/dein.vim
+[submodule "vim/dein/repos/github.com/HerringtonDarkholme/yats.vim"]
+    path = vim/dein/repos/github.com/HerringtonDarkholme/yats.vim
+    url = https://github.com/HerringtonDarkholme/yats.vim
 [submodule "vim/colors/vim-distinguished"]
 	path = vim/colors/vim-distinguished
 	url = https://github.com/maistho/vim-distinguished
-[submodule "bin/gibo"]
-	path = bin/gibo
-	url = https://github.com/simonwhitaker/gibo
-[submodule "vim/vim"]
-	path = vim/vim
-	url = https://github.com/b4winckler/vim
 [submodule "config/awesome/assault"]
 	path = config/awesome/assault
 	url = https://github.com/NuckChorris/assault.git
