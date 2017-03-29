@@ -35,14 +35,13 @@
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
-    softTabs: false
     softWrap: true
   "exception-reporting":
     userId: "4ef36ce1-6466-25c8-078f-63d7b2760e2b"
+  "fuzzy-finder": {}
   "keyboard-localization":
     useKeyboardLayout: "sv_SE"
-  linter:
-    showErrorTabLine: true
+  linter: {}
   "linter-eslint":
     fixOnSave: true
   "linter-jscs": {}
@@ -50,6 +49,10 @@
   "linter-sass-lint": {}
   "linter-scss-lint":
     executablePath: "/home/maistho/.gem/ruby/2.2.0/bin/scss-lint"
+  "linter-tslint":
+    fixOnSave: true
+  "linter-ui-default":
+    showPanel: true
   "markdown-preview":
     grammars: [
       "source.gfm"
@@ -66,8 +69,10 @@
     directory: "/home/maistho/Documents/notes"
   react:
     enabledForAllJavascriptFiles: true
+  "relative-numbers": {}
   "remote-atom":
     launch_at_startup: true
+  "status-bar": {}
   "sync-settings":
     _analyticsUserId: "ab7507b7-7cf2-4cd1-bc77-425265300b9e"
     _lastBackupHash: "0648d582bb9dafeb603a897c41cb6ef274ba95f8"
