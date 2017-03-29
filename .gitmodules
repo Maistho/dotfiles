@@ -1,6 +1,12 @@
+[submodule "vim/dein/repos/github.com/mhartington/deoplete-typescript"]
+    path = vim/dein/repos/github.com/mhartington/deoplete-typescript
+    url = https://github.com/mhartington/deoplete-typescript
 [submodule "vim/dein/repos/github.com/Shougo/vimshell"]
     path = vim/dein/repos/github.com/Shougo/vimshell
     url = https://github.com/Shougo/vimshell
+[submodule "vim/dein/repos/github.com/Shougo/neosnippet.vim"]
+    path = vim/dein/repos/github.com/Shougo/neosnippet.vim
+    url = https://github.com/Shougo/neosnippet.vim
 [submodule "vim/dein/repos/github.com/Shougo/neosnippet-snippets"]
     path = vim/dein/repos/github.com/Shougo/neosnippet-snippets
     url = https://github.com/Shougo/neosnippet-snippets
