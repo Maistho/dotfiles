@@ -37,7 +37,6 @@ Host mac
     IdentitiesOnly yes
     User gustavbylund
 
-
 Host bitbucket.org
     IdentitiesOnly yes
     IdentityFile ~/.ssh/bitbucket_rsa
@@ -46,3 +45,10 @@ Host kezo
     Hostname pewter.city
     Port 4322
     IdentitiesOnly yes
+
+Host home
+    Hostname 10.37.0.170
+    IdentitiesOnly yes
+    User maistho
+    ProxyCommand ssh archington nc %h %p
+
