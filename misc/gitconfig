@@ -1,15 +1,21 @@
 [user]
 	name = Gustav Bylund
 	email = maistho@gmail.com
+
 [credential]
 	helper = /usr/share/git/credential/gnome-keyring/git-credential-gnome-keyring
+
 [push]
 	default = simple
+
 [alias]
 	unadd = reset HEAD
     branch-diff = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    ri = rebase -i master
+
 [core]
 	excludesfile = /home/maistho/dotfiles/gitignore_global
 	attributesfile = /home/maistho/dotfiles/gitattributes
+
 [pull]
 	rebase = true
