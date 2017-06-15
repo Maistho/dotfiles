@@ -4,7 +4,7 @@
 
 local theme = {}
 
-theme.dir = os.getenv("HOME") .. "/.config/awesome/default"
+theme.dir = os.getenv("HOME") .. "/.config/awesome/themes/default"
 
 theme.font          = "sans 8"
 
@@ -26,7 +26,7 @@ theme.border_normal = "#00000077"
 theme.border_focus  = "#4d1c4baa"
 theme.border_marked = "#91231c00"
 
-theme.taglist_fg_focus =  "#f00"
+theme.taglist_fg_focus =  "#fff"
 theme.taglist_fg_occupied =  "#fff"
 theme.taglist_fg_empty =  "#fff"
 
