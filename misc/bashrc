@@ -76,3 +76,5 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 
 export GOPATH="$HOME/.gocode"
 export GOBIN="$GOPATH/bin"
+
+alias nodepath='export PATH=$PATH:./node_modules/.bin'
