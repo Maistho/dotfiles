@@ -4,6 +4,8 @@
 
 local theme = {}
 
+theme.dir = os.getenv("HOME") .. "/.config/awesome/default"
+
 theme.font          = "sans 8"
 
 theme.bg_normal     = "#00000077"
@@ -16,12 +18,17 @@ theme.fg_normal     = "#ffffffbb"
 theme.fg_focus      = "#ffffffbb"
 theme.fg_urgent     = "#ffffffbb"
 theme.fg_minimize   = "#ffffffbb"
+theme.fg_systray    = theme.fg_normal
 
 theme.useless_gap   = 1
 theme.border_width  = 1
 theme.border_normal = "#00000077"
 theme.border_focus  = "#4d1c4baa"
 theme.border_marked = "#91231c00"
+
+theme.taglist_fg_focus =  "#f00"
+theme.taglist_fg_occupied =  "#fff"
+theme.taglist_fg_empty =  "#fff"
 
 -- There are other variable sets
 -- overriding the default one when
@@ -35,13 +42,13 @@ theme.border_marked = "#91231c00"
 --theme.taglist_bg_focus = "#ff0000"
 
 -- Display the taglist squares
-theme.taglist_squares_sel   = "/usr/share/awesome/themes/default/taglist/squarefw.png"
-theme.taglist_squares_unsel = "/usr/share/awesome/themes/default/taglist/squarew.png"
+theme.taglist_squares_sel   = theme.dir .. "/icons/square_sel.png"
+theme.taglist_squares_unsel = theme.dir .. "/icons/square_unsel.png"
 
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
-theme.menu_submenu_icon = "/usr/share/awesome/themes/default/submenu.png"
+theme.menu_submenu_icon = theme.dir .. "/icons/submenu.png"
 theme.menu_height = 15
 theme.menu_width  = 100
 
