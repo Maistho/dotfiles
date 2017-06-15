@@ -13,9 +13,20 @@
     branch-diff = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     ri = rebase -i master
 
+    # Get the current branch name
+    branch-name = "!git rev-parse --abbrev-ref HEAD"
+    # Push the current branch to the remote "origin", and set it to track
+    # the upstream branch
+    publish = "!git push -u origin $(git branch-name)"
+
+
 [core]
 	excludesfile = /home/maistho/dotfiles/gitignore_global
 	attributesfile = /home/maistho/dotfiles/gitattributes
 
 [pull]
 	rebase = true
+[gitlab]
+	url = https://gitlab.com
+	host = https://gitlab.com
+	token = sQrwypZMBh5hUCGtsvyR

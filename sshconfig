@@ -21,12 +21,11 @@ Host remote-und.ida
     User gusby403
 
 Host gitlab.com
-    RSAAuthentication yes
     IdentityFile ~/.ssh/gitlab_rsa
     IdentitiesOnly yes
     User maistho
 
-Host dokku 
+Host dokku
     Hostname 10.37.0.7
     ProxyCommand /usr/bin/ssh archington /usr/bin/nc %h %p
     IdentityFile ~/.ssh/ansible_rsa
