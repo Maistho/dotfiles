@@ -6,7 +6,7 @@ Xft.rgba: rgb
 
 ! Appearance
 ! Font
-urxvt.font:	xft:Inconsolata:size=11
+urxvt.font:	xft:Inconsolata:size=11,xft:Noto Emoji
 ! Scrollbar disabled
 urxvt.scrollBar: false
 ! Character Spacing
