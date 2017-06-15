@@ -43,7 +43,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(awful.util.get_themes_dir() .. "default/theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
@@ -172,20 +172,70 @@ local tasklist_buttons = awful.util.table.join(
                                               awful.client.focus.byidx(-1)
                                           end))
 
+-- Select a random wallpaper from ~/wallpapers
+
+-- scan directory, and optionally filter outputs
+function scandir(directory, filter)
+    local i, t, popen = 0, {}, io.popen
+    if not filter then
+        filter = function(s) return true end
+    end
+    print(filter)
+    for filename in popen('ls -a "'..directory..'"'):lines() do
+        if filter(filename) then
+            i = i + 1
+            t[i] = filename
+        end
+    end
+    return t
+end
+
+wp_timeout = 300 -- 5 minutes
+wp_path = "/home/maistho/wallpapers/"
+wp_filter = function(s) return string.match(s, "%.png$") or string.match(s,"%.jpe?g$") end
+wp_files = scandir(wp_path, wp_filter)
+
+math.randomseed(os.time())
 local function set_wallpaper(s)
     -- Wallpaper
-    if beautiful.wallpaper then
-        local wallpaper = beautiful.wallpaper
-        -- If wallpaper is a function, call it with the screen
-        if type(wallpaper) == "function" then
-            wallpaper = wallpaper(s)
-        end
-        gears.wallpaper.maximized(wallpaper, s, true)
+    local wp_index = math.random(1, #wp_files)
+    local wallpaper = wp_path .. wp_files[wp_index]
+    -- If wallpaper is a function, call it with the screen
+    if type(wallpaper) == "function" then
+        wallpaper = wallpaper(s)
     end
+    gears.wallpaper.maximized(wallpaper, s, false)
 end
+ 
+-- setup the timer
+wp_timer = timer { timeout = wp_timeout }
+wp_timer:connect_signal("timeout", function()
+ 
+  -- set wallpaper to current index for all screens
+  for s = 1, screen.count() do
+    set_wallpaper(s)
+  end
+ 
+  -- stop the timer (we don't need multiple instances running at the same time)
+  wp_timer:stop()
+ 
+  --restart the timer
+  wp_timer.timeout = wp_timeout
+  wp_timer:start()
+end)
+
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
+
+
+for s = 1, screen.count() do
+  set_wallpaper(s)
+end
+ 
+-- initial start when rc.lua is first run
+wp_timer:start()
+
 
 awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
@@ -490,6 +540,9 @@ awful.rules.rules = {
     -- Set Telegram to be on the "chat" tag
     { rule = { class = "telegram-desktop" },
         properties = { screen = 1, tag = "8" }
+    },
+    { rule = { class = "URxvt" },
+        properties = { size_hints_honor = false }
     },
 }
 -- }}}
