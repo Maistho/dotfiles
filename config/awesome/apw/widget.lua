@@ -14,29 +14,30 @@
 -- You should have received a copy of the GNU General Public License
 -- along with APW. If not, see <http://www.gnu.org/licenses/>.
 
+local awful = require("awful")
+local wibox = require("wibox")
+local beautiful = require("beautiful")
+local pulseaudio = require("apw.pulseaudio")
+local math = require("math")
+
 -- Configuration variables
 local width         = 40        -- width in pixels of progressbar
-local margin_right  = 0         -- right margin in pixels of progressbar
-local margin_left   = 0         -- left margin in pixels of progressbar
+local margin_right  = 5         -- right margin in pixels of progressbar
+local margin_left   = 5         -- left margin in pixels of progressbar
 local margin_top    = 0         -- top margin in pixels of progressbar
 local margin_bottom = 0         -- bottom margin in pixels of progressbar
-local step          = 0.05      -- stepsize for volume change (ranges from 0 to 1)
-local color         = '#698f1e' -- foreground color of progessbar
-local color_bg      = '#33450f' -- background color
-local color_mute    = '#be2a15' -- foreground color when muted
-local color_bg_mute = '#532a15' -- background color when muted
+local step          = 0.025      -- stepsize for volume change (ranges from 0 to 1)
+local color         = beautiful.bg_focus -- foreground color of progessbar
+local color_bg      = "#00000000" -- background color
+local color_mute    = beautiful.bg_urgent -- foreground color when muted
+local color_bg_mute = "#00000000" -- background color when muted
 local mixer         = 'pavucontrol' -- mixer command
 local show_text     = false     -- show percentages on progressbar
 local text_color    = '#fff' -- color of text
 
 -- End of configuration
 
-local awful = require("awful")
-local wibox = require("wibox")
-local beautiful = require("beautiful")
-local pulseaudio = require("apw.pulseaudio")
 
-local math = require("math")
 -- default colors overridden by Beautiful theme
 color = beautiful.apw_fg_color or color
 color_bg = beautiful.apw_bg_color or color_bg
@@ -93,10 +94,10 @@ function pulseWidget.setColor(mute)
 end
 
 local function _update()
-	if p:UpdateState() then
-		pulseWidget:set_visible(true)
-	else
+	if p:UpdateState() == false then
 		pulseWidget:set_visible(false)
+	else
+		pulseWidget:set_visible(true)
 	end
 	pulseBar:set_value(p.Volume)
 	pulseWidget.setColor(p.Mute)

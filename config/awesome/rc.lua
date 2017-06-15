@@ -10,11 +10,6 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 
-local assault = require("assault/awesomewm/assault")
-
-local cpuinfo = require("cpuinfo")
-local APW = require("apw/widget")
-
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 
 -- {{{ Error handling
@@ -45,6 +40,12 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(require("themes/default/theme"))
+
+local APW = require("apw/widget")
+local assault = require("assault/awesomewm/assault")
+local cpuinfo = require("cpuinfo")
+
+
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
@@ -280,8 +281,8 @@ awful.screen.connect_for_each_screen(function(s)
             cpuinfo,
             wibox.widget.systray(),
             mybattery,
-            mytextclock,
             APW,
+            mytextclock,
             s.mylayoutbox,
         },
     }
@@ -394,7 +395,15 @@ globalkeys = awful.util.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "show the menubar", group = "launcher"}),
+
+    -- Volume control
+    awful.key({ }, "XF86AudioRaiseVolume", APW.Up,
+              {description = "Raise the volume", group = "system"}),
+    awful.key({ }, "XF86AudioLowerVolume", APW.Down,
+              {description = "Lower the volume", group = "system"}),
+    awful.key({ }, "XF86AudioMute", APW.ToggleMute,
+              {description = "Mute/unmute the volume", group = "system"})
 )
 
 clientkeys = awful.util.table.join(
