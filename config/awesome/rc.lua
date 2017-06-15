@@ -13,6 +13,7 @@ local menubar = require("menubar")
 local assault = require("assault/awesomewm/assault")
 
 local cpuinfo = require("cpuinfo")
+local APW = require("apw/widget")
 
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 
@@ -280,6 +281,7 @@ awful.screen.connect_for_each_screen(function(s)
             wibox.widget.systray(),
             mybattery,
             mytextclock,
+            APW,
             s.mylayoutbox,
         },
     }
