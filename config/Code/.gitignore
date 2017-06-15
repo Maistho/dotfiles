@@ -1,0 +1,8 @@
+*.sock
+Backups/
+Cache/
+CachedData/
+Cookies*
+GPUCache/
+Local Storage/
+storage.json

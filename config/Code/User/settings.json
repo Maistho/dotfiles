@@ -1,0 +1,56 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.lineNumbers": "relative",
+    "vim.hlsearch": true,
+    "search.useIgnoreFilesByDefault": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/.vscode": true
+    },
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/node_modules/**": true
+    },
+    "eslint.autoFixOnSave": true,
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 100,
+    "vim.textwidth": 100,
+    "typescript.check.tscVersion": false,
+    "workbench.editor.enablePreview": false,
+    "auto-close-tag.activationOnLanguage": [
+        "html",
+        "xml"
+    ],
+    "window.zoomLevel": 0,
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-r>"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "redo",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["u"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "undo",
+                    "args": []
+                }
+            ]
+        }
+    ],
+    "tslint.autoFixOnSave": true,
+    "vim.enableNeovim": true,
+    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.neovimPath": "/usr/bin/nvim",
+    "window.menuBarVisibility": "toggle"
+}
