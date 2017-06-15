@@ -13,3 +13,4 @@ Thumbs.db
 # Editorfiles
 *.swp
 *#
+.vscode/
