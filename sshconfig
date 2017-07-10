@@ -46,7 +46,7 @@ Host kezo
     IdentitiesOnly yes
 
 Host home
-    Hostname 10.37.0.170
+    Hostname 10.37.0.14
     IdentitiesOnly yes
     User maistho
     ProxyCommand ssh archington nc %h %p
