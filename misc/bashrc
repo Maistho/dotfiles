@@ -57,6 +57,8 @@ alias android-studio="_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on' android-s
 # etckeeper
 alias pkg-update='sudo etckeeper pre-install && sudo pacman -Syu && sudo etckeeper post-install'
 
+alias code=rmate
+
 
 #Avoid duplicates in bash_history
 export HISTCONTROL=ignoredups:erasedups
@@ -76,5 +78,4 @@ export GOBIN="$GOPATH/bin"
 
 alias nodepath='export PATH=$PATH:./node_modules/.bin'
 
-alias code="code --force-gpu-rasterization=true"
 export BROWSER=/usr/bin/google-chrome-stable

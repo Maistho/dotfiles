@@ -3,7 +3,8 @@
 	email = maistho@gmail.com
 
 [credential]
-	helper = /usr/share/git/credential/gnome-keyring/git-credential-gnome-keyring
+	# helper = /usr/share/git/credential/gnome-keyring/git-credential-gnome-keyring
+	helper = cache --timeout=3600
 
 [push]
 	default = simple
