@@ -52,5 +52,8 @@
     "vim.enableNeovim": true,
     "vim.disableAnnoyingNeovimMessage": true,
     "vim.neovimPath": "/usr/bin/nvim",
-    "window.menuBarVisibility": "toggle"
+    "window.menuBarVisibility": "toggle",
+    "editor.minimap.enabled": false,
+    "remote.onstartup": true,
+    "problems.autoReveal": false
 }
