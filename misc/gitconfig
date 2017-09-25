@@ -19,6 +19,10 @@
     # the upstream branch
     publish = "!git push -u origin $(git branch-name)"
 
+    # prettier logfile
+    l = log --graph --decorate --oneline
+
+
 
 [core]
 	excludesfile = /home/maistho/dotfiles/gitignore_global
@@ -26,7 +30,3 @@
 
 [pull]
 	rebase = true
-[gitlab]
-	url = https://gitlab.com
-	host = https://gitlab.com
-	token = sQrwypZMBh5hUCGtsvyR
