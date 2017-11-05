@@ -66,7 +66,8 @@ alias pkg-update='sudo etckeeper pre-install && sudo pacman -Syu && sudo etckeep
 export HISTCONTROL=ignoredups:erasedups
 # Save bash history after each command
 shopt -s histappend                      # append to history, don't overwrite it
-export PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
+
+export PROMPT_COMMAND="history -n; history -w; history -c; history -r;  printf '\033]0;%s@%s:%s\007' '${USER}' '${HOSTNAME%%.*}' '${PWD/#$HOME/\~}'"
 
 
 alias playmusic='chromium --profile-directory=Default --app-id=icppfcnhkcmnfdhfhphakoifcfokfdhg'
