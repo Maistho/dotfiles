@@ -36,8 +36,8 @@ fi
 if [[ -d /opt/android-sdk ]]; then
     PATH=$PATH:/opt/android-sdk/platform-tools:/opt/android-sdk/tools
 fi
-if [[ -d ~/prog/pintos/bin ]]; then
-    PATH=$PATH:~/prog/pintos/bin
+if [[ -d /opt/android-studio/gradle/gradle-4.1/bin ]]; then
+    PATH=$PATH:/opt/android-studio/gradle/gradle-4.1/bin
 fi
 
 PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
