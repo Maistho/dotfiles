@@ -51,3 +51,11 @@ Host home
     User maistho
     ProxyCommand ssh archington nc %h %p
 
+
+Host git.ionicjs.com
+    IdentityFile /home/maistho/.ssh/ionic/21711_rsa
+
+Host dokku.kada
+    HostName dokku.do.kada.se
+    IdentitiesOnly yes
+    User root
