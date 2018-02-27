@@ -75,3 +75,5 @@ export GOPATH="$HOME/.gocode"
 export GOBIN="$GOPATH/bin"
 
 alias nodepath='export PATH=$PATH:./node_modules/.bin'
+
+alias code="code --force-gpu-rasterization"
