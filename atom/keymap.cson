@@ -6,11 +6,6 @@
   ':': 'ex-mode:open'
 'atom-text-editor.vim-mode-plus':
   'ctrl-c': 'unset!'
-'body':
-  'ctrl-tab ^ctrl': 'unset!'
-  'ctrl-tab': 'pane:show-next-item'
-  'ctrl-shift-tab ^ctrl': 'unset!'
-  'ctrl-shift-tab': 'pane:show-previous-item'
 
 'atom-text-editor:not(.mini)':
   'alt-<': 'linter:next-error'

@@ -78,6 +78,9 @@
     _lastBackupHash: "0648d582bb9dafeb603a897c41cb6ef274ba95f8"
     gistId: "21e8b011ea092bee1018"
     personalAccessToken: "1909251e8ec694870b68f6b2ee8f53537180ab72"
+  tabs:
+    enableMruTabSwitching: false
+    enableVcsColoring: true
   "tree-view":
     hideIgnoredNames: true
     squashDirectoryNames: true

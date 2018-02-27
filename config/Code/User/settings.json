@@ -1,6 +1,5 @@
 {
     "workbench.iconTheme": "material-icon-theme",
-    "editor.lineNumbers": "relative",
     "vim.hlsearch": true,
     "search.useIgnoreFilesByDefault": true,
     "files.exclude": {
