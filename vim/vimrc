@@ -14,10 +14,10 @@ call dein#begin('/home/maistho/.config/nvim/dein')
 call dein#add('Shougo/dein.vim')
 
 " Add or remove your plugins here:
-call dein#add('Shougo/neosnippet.vim')
-call dein#add('Shougo/neosnippet-snippets')
-call dein#add('Shougo/deoplete.nvim')
-call dein#add('mhartington/deoplete-typescript')
+"call dein#add('Shougo/neosnippet.vim')
+"call dein#add('Shougo/neosnippet-snippets')
+"call dein#add('Shougo/deoplete.nvim')
+"call dein#add('mhartington/deoplete-typescript')
 
 call dein#add('HerringtonDarkholme/yats.vim')
 
@@ -134,7 +134,8 @@ autocmd BufNewFile,BufRead *.handlebars   set ft=mustache
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
-let &colorcolumn="80,".join(range(120,999),",")
+" Show a different color when a line becomes too long
+"let &colorcolumn="80,".join(range(120,999),",")
 
 "LaTeX stuff
 set grepprg=grep\ -nH\ $*

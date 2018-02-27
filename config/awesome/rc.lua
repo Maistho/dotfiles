@@ -48,7 +48,7 @@ local cpuinfo = require("cpuinfo")
 
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvt"
+terminal = "termite"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -208,19 +208,19 @@ local function set_wallpaper(s)
     end
     gears.wallpaper.maximized(wallpaper, s, false)
 end
- 
+
 -- setup the timer
 wp_timer = timer { timeout = wp_timeout }
 wp_timer:connect_signal("timeout", function()
- 
+
   -- set wallpaper to current index for all screens
   for s = 1, screen.count() do
     set_wallpaper(s)
   end
- 
+
   -- stop the timer (we don't need multiple instances running at the same time)
   wp_timer:stop()
- 
+
   --restart the timer
   wp_timer.timeout = wp_timeout
   wp_timer:start()
@@ -234,7 +234,7 @@ screen.connect_signal("property::geometry", set_wallpaper)
 for s = 1, screen.count() do
   set_wallpaper(s)
 end
- 
+
 -- initial start when rc.lua is first run
 wp_timer:start()
 
