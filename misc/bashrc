@@ -42,10 +42,6 @@ fi
 
 PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 
-unzip () {
-	command unzip "$@" -x "*__MACOSX*" "*.DS_Store*"
-}
-
 alias ls='ls --color=auto'
 alias vim="nvim -p"
 
