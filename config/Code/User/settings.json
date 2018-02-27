@@ -18,41 +18,24 @@
     "editor.wordWrap": "on",
     "editor.wordWrapColumn": 100,
     "vim.textwidth": 100,
-    "typescript.check.tscVersion": false,
     "workbench.editor.enablePreview": false,
     "auto-close-tag.activationOnLanguage": [
         "html",
         "xml"
     ],
     "window.zoomLevel": 0,
-    "vim.otherModesKeyBindingsNonRecursive": [
-        {
-            "before": ["<C-r>"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "redo",
-                    "args": []
-                }
-            ]
-        },
-        {
-            "before": ["u"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "undo",
-                    "args": []
-                }
-            ]
-        }
-    ],
     "tslint.autoFixOnSave": true,
     "vim.enableNeovim": true,
     "vim.disableAnnoyingNeovimMessage": true,
     "vim.neovimPath": "/usr/bin/nvim",
     "window.menuBarVisibility": "toggle",
     "editor.minimap.enabled": false,
-    "remote.onstartup": true,
-    "problems.autoReveal": false
+    "problems.autoReveal": false,
+    "editor.renderWhitespace": "all",
+    "mjml.screenshotType": "png",
+    "workbench.colorTheme": "One Dark Pro Vivid",
+    "search.useIgnoreFiles": true,
+    "workbench.panel.location": "bottom",
+    "material-icon-theme.showUpdateMessage": false,
+    "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'"
 }
