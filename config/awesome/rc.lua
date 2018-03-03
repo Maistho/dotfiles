@@ -403,7 +403,11 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86AudioLowerVolume", APW.Down,
               {description = "Lower the volume", group = "system"}),
     awful.key({ }, "XF86AudioMute", APW.ToggleMute,
-              {description = "Mute/unmute the volume", group = "system"})
+              {description = "Mute/unmute the volume", group = "system"}),
+
+    -- Print screen
+    awful.key({ }, "Print", function() awful.util.spawn('imgur-screenshot', false) end,
+              {description = "Take a screenshot", group = "system"})
 )
 
 clientkeys = awful.util.table.join(
