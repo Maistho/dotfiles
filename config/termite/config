@@ -1,6 +1,6 @@
 [options]
 font = Noto Color Emoji
-font = Droid Sans Mono 12px
+font = Droid Sans Mono 14px
 
 [colors]
 foreground = #c0c0c0
