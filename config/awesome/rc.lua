@@ -642,7 +642,7 @@ r.run("nm-applet --sm-disable")
 r.run("touchegg")
 
 -- Start compositing
-r.run("compton --config ${XDG_CONFIG_HOME:-$HOME/.config}/compton.conf -b")
+r.run("compton --config $HOME/.config/compton.conf -b")
 
 -- Run dex to autostart all desktop entries
 r.run("dex -a -e Awesome")

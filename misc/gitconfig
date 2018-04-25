@@ -27,6 +27,7 @@
 [core]
 	excludesfile = /home/maistho/dotfiles/gitignore_global
 	attributesfile = /home/maistho/dotfiles/gitattributes
+	editor = vim
 
 [pull]
 	rebase = true

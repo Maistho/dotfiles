@@ -1,5 +1,4 @@
 {
-    "workbench.iconTheme": "material-icon-theme",
     "vim.hlsearch": true,
     "search.useIgnoreFilesByDefault": true,
     "files.exclude": {
@@ -33,9 +32,11 @@
     "problems.autoReveal": false,
     "editor.renderWhitespace": "all",
     "mjml.screenshotType": "png",
-    "workbench.colorTheme": "One Dark Pro Vivid",
     "search.useIgnoreFiles": true,
     "workbench.panel.location": "bottom",
     "material-icon-theme.showUpdateMessage": false,
-    "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'"
+    "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "workbench.colorTheme": "One Dark Pro Vivid",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.formatOnSave": true
 }
