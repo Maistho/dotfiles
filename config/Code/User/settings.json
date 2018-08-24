@@ -1,42 +1,41 @@
 {
-    "vim.hlsearch": true,
-    "search.useIgnoreFilesByDefault": true,
-    "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "**/.vscode": true
-    },
-    "files.watcherExclude": {
-        "**/.git/objects/**": true,
-        "**/node_modules/**": true
-    },
-    "eslint.autoFixOnSave": true,
-    "editor.wordWrap": "on",
-    "editor.wordWrapColumn": 100,
-    "vim.textwidth": 100,
-    "workbench.editor.enablePreview": false,
-    "auto-close-tag.activationOnLanguage": [
-        "html",
-        "xml"
-    ],
-    "window.zoomLevel": 0,
-    "tslint.autoFixOnSave": true,
-    "vim.enableNeovim": true,
-    "vim.disableAnnoyingNeovimMessage": true,
-    "vim.neovimPath": "/usr/bin/nvim",
-    "window.menuBarVisibility": "toggle",
-    "editor.minimap.enabled": false,
-    "problems.autoReveal": false,
-    "editor.renderWhitespace": "all",
-    "mjml.screenshotType": "png",
-    "search.useIgnoreFiles": true,
-    "workbench.panel.location": "bottom",
-    "material-icon-theme.showUpdateMessage": false,
-    "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "workbench.colorTheme": "One Dark Pro Vivid",
-    "workbench.iconTheme": "material-icon-theme",
-    "editor.formatOnSave": true
+  "vim.hlsearch": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/.vscode": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/node_modules/**": true
+  },
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 100,
+  "vim.textwidth": 100,
+  "workbench.editor.enablePreview": false,
+  "auto-close-tag.activationOnLanguage": ["html", "xml"],
+  "window.zoomLevel": 0,
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/usr/bin/nvim",
+  "window.menuBarVisibility": "toggle",
+  "editor.minimap.enabled": false,
+  "problems.autoReveal": false,
+  "editor.renderWhitespace": "all",
+  "search.useIgnoreFiles": true,
+  "material-icon-theme.showUpdateMessage": false,
+  "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.formatOnSave": true,
+  "workbench.colorTheme": "Palenight Theme",
+  "workbench.colorCustomizations": {
+    "editor.background": "#19162c",
+    "sideBar.background": "#110f1a",
+    "sideBar.border": "#00000000",
+    "activityBar.background": "#0b0a0f",
+    "activityBar.border": "#00000000",
+    "input.background": "#1d1b28"
+  }
 }
