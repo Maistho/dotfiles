@@ -14,16 +14,8 @@ call dein#begin('/home/maistho/.config/nvim/dein')
 call dein#add('Shougo/dein.vim')
 
 " Add or remove your plugins here:
-"call dein#add('Shougo/neosnippet.vim')
-"call dein#add('Shougo/neosnippet-snippets')
-"call dein#add('Shougo/deoplete.nvim')
-"call dein#add('mhartington/deoplete-typescript')
-
+call dein#add('lambdalisue/suda.vim')
 call dein#add('HerringtonDarkholme/yats.vim')
-
-
-" You can specify revision/branch/tag.
-call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
 " Required:
 call dein#end()
