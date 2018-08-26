@@ -1,5 +1,5 @@
-directory:  /media/music/
-library:    /media/disks/mybook/music/musiclibrary.blb
+directory:  /mypool/music/
+library:    /mypool/music/musiclibrary.blb
 
 import:
    write:   yes
@@ -20,4 +20,4 @@ paths:
 
    albumtype:soundtrack:   Soundtracks/$album%aunique{albumartist album, albumtype year label catalognum albumdisambig}/$track $title
 
-plugins: web
+#plugins: web
