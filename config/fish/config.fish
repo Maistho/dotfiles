@@ -10,8 +10,8 @@ if test -d /opt/android-sdk
     set -gx PATH $PATH /opt/android-sdk/platform-tools /opt/android-sdk/tools
 end
 
-if test -d /opt/android-studio/gradle/gradle-*/bin
-    set -gx PATH $PATH /opt/android-studio/gradle/gradle-*/bin
+if test -d /opt/android-studio/gradle/gradle-4.4/bin
+    set -gx PATH $PATH /opt/android-studio/gradle/gradle-4.4/bin
 end
 
 set gemdir (ruby -e 'puts Gem.user_dir')/bin
