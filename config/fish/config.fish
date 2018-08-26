@@ -2,8 +2,18 @@ set -g theme_display_git_dirty yes
 set -g theme_display_git_master_branch yes
 set -g theme_nerd_fonts yes
 
+set -gx EDITOR (which nvim)
+
 if test -d ~/bin
     set -gx PATH $PATH ~/bin
+end
+
+if test -d ~/Android/Sdk/platform-tools
+    set -gx PATH $PATH ~/Android/Sdk/platform-tools
+end
+
+if test -d ~/Android/Sdk/tools
+    set -gx PATH $PATH ~/Android/Sdk/tools
 end
 
 if test -d /opt/android-sdk

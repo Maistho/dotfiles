@@ -28,6 +28,7 @@
 	excludesfile = /home/maistho/dotfiles/gitignore_global
 	attributesfile = /home/maistho/dotfiles/gitattributes
 	editor = vim
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [pull]
 	rebase = true
