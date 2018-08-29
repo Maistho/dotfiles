@@ -29,6 +29,11 @@ if test -d $gemdir
     set -gx PATH $PATH $gemdir
 end
 
+set yarndir (yarn global bin)
+if test -d $yarndir
+    set -gx PATH $PATH $yarndir
+end
+
 set -gx PATH $PATH $NPM_PACKAGES/bin
 
 set GOPATH ~/.gocode
