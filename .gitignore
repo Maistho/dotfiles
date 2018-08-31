@@ -1,2 +1,11 @@
 vim/undodir
 vim/dein/.cache
+vim/.netrwhist
+
+config/Code/Cache/
+config/Code/CachedData/
+config/Code/CachedExtensions/
+config/Code/User/workspaceStorage/
+config/Code/logs
+config/Code/machineid
+config/Code/languagepacks.json
