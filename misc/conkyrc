@@ -10,15 +10,14 @@ conky.config = {
     own_window_hints = "undecorated,below,sticky,skip_taskbar,skip_pager",
     own_window_transparent = true,
     own_window_argb_visual = true,
-    own_window_argb_value = 111,
-    background = false,
+    own_window_argb_value = 255,
     double_buffer = true,
     draw_shades = false,
     draw_outline = false,
     draw_borders = false,
     draw_graph_borders = false,
     default_color = "FFFFFF",
-    default_shade_color = "000000",
+    default_shade_color = "FFFFFF",
     default_outline_color = "FF00FF",
     default_bar_height = 5,
     alignment = "top_right",
@@ -33,7 +32,7 @@ conky.text =
     [[
 ${execpi 10 bash /home/maistho/prog/wallpapers/conky_color.sh}
 ${nodename}
-Up for ${uptime}
+Up for ${uptime_short}
 ${voffset -10}
 CPU: ${CPU}%
 ${cpubar}
