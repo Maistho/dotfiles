@@ -21,7 +21,6 @@
   "window.zoomLevel": 0,
   "vim.enableNeovim": true,
   "vim.neovimPath": "/usr/bin/nvim",
-  "window.menuBarVisibility": "toggle",
   "editor.minimap.enabled": false,
   "problems.autoReveal": false,
   "editor.renderWhitespace": "all",
@@ -38,5 +37,10 @@
     "activityBar.background": "#0b0a0f",
     "activityBar.border": "#00000000",
     "input.background": "#1d1b28"
-  }
+  },
+  "window.titleBarStyle": "custom",
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "telemetry.enableTelemetry": false,
+  "typescript.tsserver.log": "verbose",
+  "typescript.tsdk": "./node_modules/typescript/lib"
 }

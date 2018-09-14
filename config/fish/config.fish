@@ -34,6 +34,10 @@ if test -d $yarndir
     set -gx PATH $PATH $yarndir
 end
 
+if test -d ~/dotfiles/bin
+    set -gx PATH $PATH ~/dotfiles/bin
+end
+
 set -gx PATH $PATH $NPM_PACKAGES/bin
 
 set GOPATH ~/.gocode
@@ -48,6 +52,4 @@ alias dokku "ssh dokku@dokku --"
 alias git-blame-count "git ls-tree --name-only -z -r HEAD|egrep -z -Z -E '\.(cc|h|cpp|hpp|c|txt|html|js|css|xml)\$'|xargs -0 -n1 git blame --line-porcelain|grep '^author '|sort|uniq -c|sort -nr|sed 's/author/lines authored by/'"
 
 alias nodepath "set PATH $PATH ./node_modules/.bin"
-
-alias code "code --force-gpu-rasterization=true"
 

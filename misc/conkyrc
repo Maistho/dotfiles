@@ -1,7 +1,7 @@
 conky.config = {
     background = true,
     use_xft = true,
-    font = "Droid Sans Mono:size=16",
+    font = "Quicksand:size=20",
     xftalpha = 1,
     update_interval = 1.0,
     total_run_times = 0,
@@ -21,32 +21,34 @@ conky.config = {
     default_outline_color = "FF00FF",
     default_bar_height = 5,
     alignment = "top_right",
-    gap_x = 5 + 1920,
-    gap_y = 39,
+    gap_x = -1920 + 5,
+    gap_y = 5,
     no_buffers = true,
     uppercase = false,
     cpu_avg_samples = 2,
     override_utf8_locale = false
 }
 conky.text =
-    [[
-${execpi 10 bash /home/maistho/prog/wallpapers/conky_color.sh}
-${nodename}
+    [[${execpi 10 bash /home/maistho/prog/wallpapers/conky_color.sh}${nodename}
 Up for ${uptime_short}
-${voffset -10}
-CPU: ${CPU}%
+${voffset -5}
+i5-6600K@${freq_g}GHz
+Usage: ${CPU}%
 ${cpubar}
-${voffset -10}
-RAM: ${mem}
+${voffset -5}
+RAM: ${memperc}% (${mem})
 ${membar}
-${voffset -10}
-HDD: ${fs_used}
+${voffset -5}
+SSD: ${fs_free} free
 ${fs_bar}
-${voffset -10}
-${hr 1}
-${execi 10 nvidia-smi --format=csv,noheader,nounits --query-gpu=name}
-VRAM: ${execi 10 nvidia-smi --format=csv,noheader,nounits --query-gpu=memory.used}/${execi 10 nvidia-smi --format=csv,noheader,nounits --query-gpu=memory.total} MiB
-${execigraph 10 "echo $(nvidia-smi --format=csv,noheader,nounits --query-gpu=memory.used) / $(nvidia-smi --format=csv,noheader,nounits --query-gpu=memory.total) '* 100' | bc -l" 30,250 00FF00 FF0000 100 -t}
-Temp: ${execi 10 nvidia-smi --format=csv,noheader,nounits --query-gpu=temperature.gpu}C
-${execigraph 10 "nvidia-smi --format=csv,noheader,nounits --query-gpu=temperature.gpu" 50,250 00FF00 FF0000 100 -t}
+
+Radeon RX Vega 56
+GPU load: ${execi 10 amdinfo | rg '^GPU Load:' | cut -d ' ' -f3}%
+${execigraph 10 "amdinfo | rg '^GPU Load:' | cut -d ' ' -f3" 50, 250 00FF00 FF0000 100}
+GPU Temp: ${execi 10 amdinfo | rg '^GPU Temperature:' | cut -d ' ' -f3}C
+${execigraph 10 "amdinfo | rg '^GPU Temperature:' | cut -d ' ' -f3" 50, 250 00FF00 FF0000 100 -t}
 ]]
+
+--
+--VRAM: ${execi 10 nvidia-smi --format=csv,noheader,nounits --query-gpu=memory.used}/${execi 10 nvidia-smi --format=csv,noheader,nounits --query-gpu=memory.total} MiB
+--${execigraph 10 "echo $(nvidia-smi --format=csv,noheader,nounits --query-gpu=memory.used) / $(nvidia-smi --format=csv,noheader,nounits --query-gpu=memory.total) '* 100' | bc -l" 30,250 00FF00 FF0000 100 -t}
