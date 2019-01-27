@@ -6,7 +6,7 @@ Host lansen
     User maistho
 
 Host archington
-    HostName bylundia.se
+    HostName archington.bylundia.se
     IdentitiesOnly yes
     User maistho
 
@@ -51,9 +51,8 @@ Host home
     User maistho
     ProxyCommand ssh archington nc %h %p
 
-
 Host git.ionicjs.com
-    IdentityFile /home/maistho/.ssh/ionic/21711_rsa
+    IdentityFile /home/maistho/.ssh/ionic/21711
 
 Host dokku.kada
     HostName dokku.do.kada.se
