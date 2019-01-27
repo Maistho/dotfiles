@@ -21,6 +21,7 @@
 
     # prettier logfile
     l = log --graph --decorate --oneline
+    lb = log --graph --decorate --oneline --simplify-by-decoration
 
 
 
@@ -32,3 +33,6 @@
 
 [pull]
 	rebase = true
+
+[diff "pdf"]
+    command = diffpdf
