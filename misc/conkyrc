@@ -29,12 +29,16 @@ conky.config = {
     override_utf8_locale = false
 }
 conky.text =
-    [[${execpi 10 bash /home/maistho/prog/wallpapers/conky_color.sh}${nodename}
-Up for ${uptime_short}
-${voffset -5}
+    [[
+${goto 60}${font Quicksand:size=36}${time %H}${goto 110}${font Quicksand:size=28}${time %M}${goto 160}${font Quicksand:size=20}${time %S}${font}
+${execpi 10 bash /home/maistho/prog/wallpapers/conky_color.sh}${nodename}
+${voffset -5}${font Quicksand:size=16}Up for ${uptime_short}${font}
+${voffset -10}
 i5-6600K@${freq_g}GHz
-Usage: ${CPU}%
+${font Quicksand:size=16}Usage: ${CPU}%${font}
 ${cpubar}
+CPU Temp: ${execi 10 sensors | rg '^Package id' | regex 's/^Package id 0:\s+\+(\d+).*/$1/' }C
+${execigraph 10 "sensors | rg '^Package id' | regex 's/^Package id 0:\s+\+(\d+).*/\1/'" 50, 250 00FF00 FF0000 100 -t}
 ${voffset -5}
 RAM: ${memperc}% (${mem})
 ${membar}
@@ -43,9 +47,9 @@ SSD: ${fs_free} free
 ${fs_bar}
 
 Radeon RX Vega 56
-GPU load: ${execi 10 amdinfo | rg '^GPU Load:' | cut -d ' ' -f3}%
-${execigraph 10 "amdinfo | rg '^GPU Load:' | cut -d ' ' -f3" 50, 250 00FF00 FF0000 100}
-GPU Temp: ${execi 10 amdinfo | rg '^GPU Temperature:' | cut -d ' ' -f3}C
+${font Quicksand:size=16}GPU load: ${execi 10 amdinfo | rg '^GPU Load:' | cut -d ' ' -f3}%${font}
+${execigraph 10 "amdinfo | rg '^GPU Load:' | cut -d ' ' -f3" 50, 250 00FF00 FF0000 100 -t}
+${font Quicksand:size=16}GPU Temp: ${execi 10 amdinfo | rg '^GPU Temperature:' | cut -d ' ' -f3}C${font}
 ${execigraph 10 "amdinfo | rg '^GPU Temperature:' | cut -d ' ' -f3" 50, 250 00FF00 FF0000 100 -t}
 ]]
 
