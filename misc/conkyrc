@@ -30,7 +30,7 @@ conky.config = {
 }
 conky.text =
     [[
-${goto 60}${font Quicksand:size=36}${time %H}${goto 110}${font Quicksand:size=28}${time %M}${goto 150}${font Quicksand:size=20}${time %S}${font}
+${alignc}${font Quicksand:size=36}${time %H} ${font Quicksand:size=28}${time %M}${font}
 ${execpi 10 bash /home/maistho/prog/wallpapers/conky_color.sh}${nodename}
 ${voffset -5}${font Quicksand:size=16}Up for ${uptime_short}${font}
 ${voffset -10}
