@@ -9,3 +9,13 @@ config/Code/User/workspaceStorage/
 config/Code/logs
 config/Code/machineid
 config/Code/languagepacks.json
+config/Code/IndexedDB/
+config/Code/Network Persistent State
+config/Code/Origin Bound Certs
+config/Code/Origin Bound Certs-journal
+config/Code/QuotaManager
+config/Code/QuotaManager-journal
+config/Code/User/globalStorage/
+config/Code/databases/
+config/Code/rapid_render.json
+config/fish/fish_variables
