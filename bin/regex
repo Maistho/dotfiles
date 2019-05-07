@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+
+const readline = require("readline");
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+  terminal: false
+});
+
+const arg = process.argv[2].split(/(?<!\\)\//);
+
+if (arg[0] !== "s") {
+  throw new Error("Only supports replace now");
+}
+
+if (arg.length !== 4) {
+  throw new Error("wrong arg length: " + arg.length);
+}
+
+const re = new RegExp(arg[1], arg[3]);
+
+rl.on("line", line => {
+  process.stdout.write(line.replace(re, arg[2].replace('\\1', '$1') + "\n"));
+});
+rl.on("close", () => {
+  process.exit();
+});
