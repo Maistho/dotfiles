@@ -38,9 +38,21 @@
     "activityBar.border": "#00000000",
     "input.background": "#1d1b28"
   },
-  "window.titleBarStyle": "custom",
   "typescript.disableAutomaticTypeAcquisition": true,
   "telemetry.enableTelemetry": false,
   "typescript.tsserver.log": "verbose",
-  "typescript.tsdk": "./node_modules/typescript/lib"
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "breadcrumbs.enabled": true,
+  "javascript.suggest.autoImports": false,
+  "editor.snippetSuggestions": "none",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.startupEditor": "newUntitledFile",
+  "window.titleBarStyle": "custom",
+  "emmet.showAbbreviationSuggestions": false,
+  "emmet.showExpandedAbbreviation": "never",
+  "workbench.editor.revealIfOpen": true,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "references.preferredLocation": "view",
+  "gitlens.defaultDateFormat": "Y-MM-DD HH:mm"
 }
