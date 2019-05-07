@@ -20,8 +20,8 @@ if test -d /opt/android-sdk
     set -gx PATH $PATH /opt/android-sdk/platform-tools /opt/android-sdk/tools
 end
 
-if test -d /opt/android-studio/gradle/gradle-4.10.1/bin
-    set -gx PATH $PATH /opt/android-studio/gradle/gradle-4.10.1/bin
+if test -d /opt/android-studio/gradle/gradle-5.1.1/bin
+    set -gx PATH $PATH /opt/android-studio/gradle/gradle-5.1.1/bin
 end
 
 set gemdir (ruby -e 'puts Gem.user_dir')/bin
@@ -39,6 +39,10 @@ if test -d ~/dotfiles/bin
 end
 
 set -gx PATH $PATH $NPM_PACKAGES/bin
+
+if test -d ~/flutter/bin
+    set -gx PATH $PATH ~/flutter/bin ~/flutter/bin/cache/dart-sdk/bin
+end
 
 set GOPATH ~/.gocode
 set GOBIN $GOPATH/bin
