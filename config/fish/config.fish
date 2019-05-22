@@ -1,3 +1,4 @@
+set -x LANG en_GB.utf8
 set -g theme_display_git_dirty yes
 set -g theme_display_git_master_branch yes
 set -g theme_nerd_fonts yes
