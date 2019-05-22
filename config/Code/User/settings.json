@@ -54,5 +54,7 @@
   "workbench.editor.revealIfOpen": true,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "references.preferredLocation": "view",
-  "gitlens.defaultDateFormat": "Y-MM-DD HH:mm"
+  "gitlens.defaultDateFormat": "Y-MM-DD HH:mm",
+  "dart.flutterCreateAndroidLanguage": "kotlin",
+  "dart.flutterCreateIOSLanguage": "swift"
 }
