@@ -1,0 +1,87 @@
+{
+  "tags": {
+    "client": [
+      "/home/maistho/prog/@ifiske/cordova-plugin-fcm",
+      "/home/maistho/prog/@ifiske/cordova-plugin-migrate-localstorage",
+      "/home/maistho/prog/@ifiske/cordova-plugin-sms",
+      "/home/maistho/prog/@ifiske/ionic2-super-tabs",
+      "/home/maistho/prog/cornerstoneTools",
+      "/home/maistho/prog/devils",
+      "/home/maistho/prog/ifiske",
+      "/home/maistho/prog/ifiske5",
+      "/home/maistho/prog/projects",
+      "/home/maistho/prog/radsim",
+      "/home/maistho/prog/radsim/dect/cornerstoneWADOImageLoader_AM",
+      "/home/maistho/prog/youworld"
+    ],
+    "ifiske": [
+      "/home/maistho/prog/@ifiske/cordova-plugin-fcm",
+      "/home/maistho/prog/@ifiske/cordova-plugin-migrate-localstorage",
+      "/home/maistho/prog/@ifiske/cordova-plugin-sms",
+      "/home/maistho/prog/@ifiske/ionic2-super-tabs",
+      "/home/maistho/prog/ifiske",
+      "/home/maistho/prog/ifiske5"
+    ],
+    "work": [
+      "/home/maistho/dotfiles",
+      "/home/maistho/prog/@ifiske/cordova-plugin-fcm",
+      "/home/maistho/prog/@ifiske/cordova-plugin-migrate-localstorage",
+      "/home/maistho/prog/@ifiske/cordova-plugin-sms",
+      "/home/maistho/prog/@ifiske/ionic2-super-tabs",
+      "/home/maistho/prog/@kadadev/assets",
+      "/home/maistho/prog/@kadadev/components",
+      "/home/maistho/prog/billing",
+      "/home/maistho/prog/cornerstoneTools",
+      "/home/maistho/prog/devils",
+      "/home/maistho/prog/gatsby-source-facebook",
+      "/home/maistho/prog/gatsby-starter-kada",
+      "/home/maistho/prog/ifiske",
+      "/home/maistho/prog/ifiske5",
+      "/home/maistho/prog/kada.se",
+      "/home/maistho/prog/projects",
+      "/home/maistho/prog/radsim",
+      "/home/maistho/prog/radsim/dect/cornerstoneWADOImageLoader_AM",
+      "/home/maistho/prog/salary_calculator",
+      "/home/maistho/prog/youworld"
+    ],
+    "play": [
+      "/home/maistho/dotfiles",
+      "/home/maistho/prog/TeaServer",
+      "/home/maistho/prog/TeaTimer",
+      "/home/maistho/prog/adventofcode2018",
+      "/home/maistho/prog/automator",
+      "/home/maistho/prog/discord-widget",
+      "/home/maistho/prog/esp8266/esp-open-sdk-v3",
+      "/home/maistho/prog/esp8266/esp-open-sdk",
+      "/home/maistho/prog/esp8266/esp-open-sdk/ESP8266_NONOS_SDK-2.1.0-18-g61248df",
+      "/home/maistho/prog/esp8266/esp-open-sdk/sdk",
+      "/home/maistho/prog/esp8266/project/esp82xx",
+      "/home/maistho/prog/flutter-desktop-embedding",
+      "/home/maistho/prog/foodprint",
+      "/home/maistho/prog/gulp-html-transform",
+      "/home/maistho/prog/gustavbylund.com",
+      "/home/maistho/prog/h4s2019",
+      "/home/maistho/prog/inbox",
+      "/home/maistho/prog/lowdb-test-thing/node_modules/lowdb",
+      "/home/maistho/prog/lowdb",
+      "/home/maistho/prog/moomin-collector",
+      "/home/maistho/prog/openaudible",
+      "/home/maistho/prog/projects",
+      "/home/maistho/prog/rust-wildbow-scraper",
+      "/home/maistho/prog/salary_calculator",
+      "/home/maistho/prog/tea-visualiser",
+      "/home/maistho/prog/unladen.me",
+      "/home/maistho/prog/wallpapers"
+    ],
+    "convis": [
+      "/home/maistho/prog/convis-admin",
+      "/home/maistho/prog/convis-landing-page",
+      "/home/maistho/prog/convis"
+    ],
+    "radsim": [
+      "/home/maistho/prog/cornerstoneTools",
+      "/home/maistho/prog/radsim",
+      "/home/maistho/prog/radsim/dect/cornerstoneWADOImageLoader_AM"
+    ]
+  }
+}
