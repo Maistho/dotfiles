@@ -8,25 +8,77 @@ const rl = readline.createInterface({
   terminal: false
 });
 
+const availableFlags = {
+  all: false,
+  input: true,
+  reduce: true,
+  initial: true
+};
+const flagAliases = { a: "all", r: "reduce", i: "input" };
 const args = [];
-const flags = [];
-process.argv.slice(2).forEach(arg => {
+const flags = {};
+
+for (let i = 2; i < process.argv.length; ) {
+  const arg = process.argv[i++];
   if (arg.startsWith("-")) {
-    flags.push(arg.replace(/^--?/, ""));
+    let flag = arg.replace(/^--?/, "");
+    let flagArg;
+    if (flag.includes("=")) {
+      const [f, a] = flag.split("=", 2);
+      flag = f;
+      flagArg = a;
+    }
+    if (flagAliases[flag]) {
+      flag = flagAliases[flag];
+    }
+    if (flagArg === undefined && availableFlags[flag]) {
+      flagArg = process.argv[i++];
+    }
+    flags[flag] = flagArg;
   } else {
     args.push(arg);
   }
-});
+}
 
-const userFn = Function(
-  "stdin_QtZSMvEPLu",
-  `return stdin_QtZSMvEPLu.${args[0]}`
-);
+const impl = args[0] == undefined ? "" : args[0];
 
+let userFn;
+if (flags.hasOwnProperty("input")) {
+  userFn = Function(flags.input, `"use strict"; return ${impl};`);
+} else {
+  userFn = Function("line", `"use strict"; return line${impl};`);
+}
+
+const reducerFn = flags.hasOwnProperty("reduce")
+  ? Function("a", "b", `"use strict"; return ${flags.reduce};`)
+  : undefined;
+let result = flags.hasOwnProperty("initial")
+  ? JSON.parse(flags.initial)
+  : undefined;
 rl.on("line", stdin => {
   const res = userFn(stdin);
-  if (res != undefined || flags.includes("a") || flags.includes("all")) {
-    console.log(res);
+  if (flags.hasOwnProperty("reduce")) {
+    result = reducerFn(result, res);
   }
-  //process.stdout.write(userFn(stdin).toString() + "\n")
+  if (
+    (!flags.hasOwnProperty("reduce") && res != undefined) ||
+    flags.hasOwnProperty("all")
+  ) {
+    write(res);
+  }
 });
+
+if (flags.hasOwnProperty("reduce")) {
+  rl.on("close", () => {
+    write(result);
+  });
+}
+
+function write(thing) {
+  if (typeof thing !== "string") {
+    process.stdout.write(JSON.stringify(thing));
+  } else {
+    process.stdout.write(thing);
+  }
+  process.stdout.write("\n");
+}
