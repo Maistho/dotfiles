@@ -8,13 +8,25 @@ const rl = readline.createInterface({
   terminal: false
 });
 
+const args = [];
+const flags = [];
+process.argv.slice(2).forEach(arg => {
+  if (arg.startsWith("-")) {
+    flags.push(arg.replace(/^--?/, ""));
+  } else {
+    args.push(arg);
+  }
+});
+
 const userFn = Function(
   "stdin_QtZSMvEPLu",
-  `return stdin_QtZSMvEPLu.${process.argv[2]}`
+  `return stdin_QtZSMvEPLu.${args[0]}`
 );
 
 rl.on("line", stdin => {
   const res = userFn(stdin);
-  console.log(res);
+  if (res != undefined || flags.includes("a") || flags.includes("all")) {
+    console.log(res);
+  }
   //process.stdout.write(userFn(stdin).toString() + "\n")
 });
