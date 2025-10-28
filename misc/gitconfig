@@ -1,20 +1,26 @@
 [user]
 	name = Gustav Bylund
-	email = maistho@gmail.com
+	email = hello@gustavbylund.se
+	signingkey = 34C0BC7F3E485FF4
 
 [credential]
 	helper = /usr/share/git/credential/gnome-keyring/git-credential-gnome-keyring
 
 [push]
 	default = simple
+	autoSetupRemote = true
 
 [alias]
 	unadd = reset HEAD
     branch-diff = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     ri = rebase -i master
 
+    ap = add . -p
+    please = push --force-with-lease
     # Get the current branch name
     branch-name = "!git rev-parse --abbrev-ref HEAD"
+    # Get the default branch name, main | master | dev | develop
+    default-branch = "!git branch --sort=-refname | grep -o -m1 '\\b\\(main\\|master\\|dev\\|develop\\)\\b'"
     # Push the current branch to the remote "origin", and set it to track
     # the upstream branch
     publish = "!git push -u origin $(git branch-name)"
@@ -23,7 +29,10 @@
     l = log --graph --decorate --oneline
     lb = log --graph --decorate --oneline --simplify-by-decoration
 
-
+    # Rebasing
+    ri = "!git rebase -i $(git default-branch)"
+    rc = rebase --continue
+    ra = rebase --abort
 
 [core]
 	excludesfile = /home/maistho/dotfiles/gitignore_global
@@ -36,3 +45,9 @@
 
 [diff "pdf"]
     command = diffpdf
+[init]
+	defaultBranch = main
+[advice]
+	skippedCherryPicks = false
+[rebase]
+	autosquash = true
