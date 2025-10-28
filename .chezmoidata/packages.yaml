@@ -1,0 +1,31 @@
+packages:
+  darwin:
+    brews:
+      - chezmoi
+      - coreutils
+      - diff-so-fancy
+      - entr
+      - fd
+      - ffmpeg
+      - fish
+      - fluxcd/tap/flux
+      - fnm
+      - fzf
+      - git
+      - helm
+      - htop
+      - jq
+      - kubernetes-cli
+      - leoafarias/fvm/fvm
+      - ncdu
+      - neovim
+      - pnpm
+      - ripgrep
+      - scrcpy
+      - sd
+      - uv
+      - zoxide
+    casks:
+      - font-fira-mono-nerd-font
+      - font-meslo-for-powerlevel10k
+      - kitty

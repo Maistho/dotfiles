@@ -1,0 +1,53 @@
+[user]
+    name = Gustav Bylund
+    email = hello@gustavbylund.se
+
+[push]
+    default = simple
+    autoSetupRemote = true
+
+[alias]
+    unadd = reset HEAD
+    branch-diff = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    ri = rebase -i master
+
+    ap = add . -p
+    please = push --force-with-lease --force-if-includes
+    # Get the current branch name
+    branch-name = "!git rev-parse --abbrev-ref HEAD"
+    # Get the default branch name, main | master | dev | develop
+    default-branch = "!git branch --sort=-refname | grep -o -m1 '\\b\\(main\\|master\\|dev\\|develop\\)\\b'"
+    # Push the current branch to the remote "origin", and set it to track
+    # the upstream branch
+    publish = "!git push -u origin $(git branch-name)"
+    blame-count = "!git ls-tree --name-only -z -r HEAD | xargs -0 -n1 git blame --line-porcelain | grep '^author ' | sort | uniq -c | sort -nr"
+
+    # prettier logfile
+    l = log --graph --decorate --oneline
+    lb = log --graph --decorate --oneline --simplify-by-decoration
+
+    # Fetch the main branch
+    fm = "!git fetch origin $(git default-branch) $(git default-branch)"
+
+    # Rebasing
+    ri = "!git rebase -i $(git default-branch)"
+    rc = rebase --continue
+    ra = rebase --abort
+
+[core]
+    excludesfile = /home/maistho/dotfiles/gitignore_global
+    attributesfile = /home/maistho/dotfiles/gitattributes
+    editor = vim
+    pager = diff-so-fancy | less --tabs=4 -RFX
+
+[pull]
+    rebase = true
+
+[diff "pdf"]
+    command = diffpdf
+[init]
+    defaultBranch = main
+[advice]
+    skippedCherryPicks = false
+[rebase]
+    autosquash = true

@@ -1,0 +1,8 @@
+IdentitiesOnly yes
+IdentityFile ~/.ssh/id_ed25519
+
+Host gitlab.com
+    User maistho
+
+Host pve.bylundia.se
+    User root
