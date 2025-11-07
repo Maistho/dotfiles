@@ -1,3 +1,5 @@
+Include /Users/maistho/.colima/ssh_config
+
 IdentitiesOnly yes
 IdentityFile ~/.ssh/id_ed25519
 

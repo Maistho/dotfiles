@@ -134,11 +134,7 @@ set hlsearch
 set grepprg=grep\ -H\ $*
 
 " Persistent undo
-" not working? TODO: check why
-set undodir=~/.vim/undodir
 set undofile
-set undolevels=1000
-set undoreload=10000
 
 " Buffer navigation
 nnoremap <C-S-tab> :tabp<CR>

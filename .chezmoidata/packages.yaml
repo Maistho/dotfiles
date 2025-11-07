@@ -3,6 +3,9 @@ packages:
     brews:
       - chezmoi
       - coreutils
+      - colima
+      - docker
+      - docker-compose
       - diff-so-fancy
       - entr
       - fd
@@ -21,11 +24,13 @@ packages:
       - neovim
       - pnpm
       - ripgrep
+      - ruby
       - scrcpy
       - sd
       - uv
       - zoxide
     casks:
+      - alt-tab
       - font-fira-mono-nerd-font
       - font-meslo-for-powerlevel10k
       - kitty
